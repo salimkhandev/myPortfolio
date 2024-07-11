@@ -49,6 +49,7 @@ function App() {
 
   return (
     <div className="App">
+      <img src="/src/assets/logo.jpg" alt="" srcset="" />
       <Header />
       <main className="pt-13">
         <Home />
