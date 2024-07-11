@@ -3,7 +3,7 @@ const Home = () => {
     <div className="py-20 bg-gradient-to-r from-blue-900 to-teal-500 text-white">
       <div className="flex justify-center h-10">
         <img
-          src="/src/assets/logoPic.png"
+          src="/src/assets/logo.png"
           className="h-40 rounded-full bg-transparent"
           alt="Logo"
         />
