@@ -4,7 +4,7 @@ const Home = () => {
       <div className="flex justify-center h-10">
         <img
           src="/src/components/bc image.jpg"
-          className="h-40 rounded-full"
+          style={{ height: "10rem", borderRadius: "50%" }} // Example styles
           alt="Logo"
         />
       </div>
