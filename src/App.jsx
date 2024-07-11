@@ -49,6 +49,7 @@ function App() {
 
   return (
     <div className="App">
+      
       <Header />
       <main className="pt-13">
         <Home />
