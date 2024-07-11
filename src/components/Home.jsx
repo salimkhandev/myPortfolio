@@ -4,8 +4,8 @@ const Home = () => {
       <div className="flex justify-center h-10">
         <img
           src="/src/assets/logoPic.png"
-          className="h-40 rounded-full bg-transparent"
-          alt="Logo"
+          className="h-40 rounded-full"
+          alt="LOGO"
         />
       </div>
 
