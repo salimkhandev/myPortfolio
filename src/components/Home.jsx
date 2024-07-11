@@ -4,7 +4,6 @@ const Home = () => {
       <div className="flex justify-center h-10">
         <img
           src="/src/assets/logo.jpg"
-          className="h-40 rounded-full bg-transparent"
           alt="this logo"
         />
       </div>
