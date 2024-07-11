@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scrolling Navigation Example with Animations</title>
+<style>
+  /* Basic styles for demonstration */
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000; /* Ensures the header is above other content */
+  }
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  nav ul li a:hover {
+    color: #99f;
+  }
+  section {
+    padding: 20px;
+    margin-top: 40px; /* To create space for the fixed header */
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Slide down animation effect */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  section:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+  section.active {
+    opacity: 1; /* Visible when active */
+    transform: translateY(0); /* Slide up animation effect */
+  }
+</style>
+</head>
+<body>
+  
+<header>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="home">
+  <h2>Home Section</h2>
+  <p>This is the home section of the page. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui nostrum minus quia sint veniam error molestiae sit et dolores architecto, eum cum neque nobis ad laborum possimus eaque quam cupiditate. Corporis ea nemo iste aperiam porro fuga dicta odio doloremque similique, veniam commodi amet placeat doloribus culpa! Enim quam quia dolorem placeat illum ex tenetur nostrum vitae rerum ullam! Dolorum temporibus blanditiis minus ullam corporis tempora, at officia minima laudantium fugiat commodi obcaecati quae iure, necessitatibus maiores dolores quibusdam, nostrum alias nihil nam quia ab? Dignissimos consequuntur obcaecati, reiciendis provident est explicabo tenetur neque expedita eligendi iure animi voluptatum culpa id nobis accusantium debitis minus tempore voluptatem maiores eius officia quam? Nemo excepturi voluptatum obcaecati illo odio, hic atque reprehenderit ut ad fugit a omnis cum dicta natus deserunt officia nihil rem explicabo eum. Officiis porro totam distinctio recusandae ex! Cupiditate soluta, laboriosam natus eum, impedit nemo ab hic dolor accusantium, esse consectetur? Corrupti illum dolorem vel ipsa consectetur praesentium repellat sunt sequi nostrum, veritatis enim repellendus molestiae eligendi reprehenderit est at unde laudantium modi! Sint, recusandae repudiandae incidunt, quasi laboriosam quos amet nobis iure quod esse quae ipsam sapiente accusantium assumenda beatae! Est esse officia aspernatur, eveniet modi facere veniam assumenda dolore illum odio, quae expedita doloribus corporis commodi cum, deleniti animi eum? Modi facilis error officiis, sapiente, commodi quis nihil id quas exercitationem odit dolores ipsum odio iusto harum temporibus. A deserunt, architecto facere quasi at perferendis corporis eum ex sit explicabo aut praesentium atque alias! Animi inventore pariatur officia, veritatis aliquid nobis minus possimus sit, necessitatibus voluptate quibusdam consequatur quia assumenda molestiae. Ipsum error ea doloribus tempore, suscipit fugiat ipsa commodi laborum eum sint qui vitae molestiae fuga saepe aliquam, quibusdam voluptate impedit ullam corporis deserunt quidem? Reprehenderit veritatis asperiores error rerum. Animi, dignissimos minus. Assumenda omnis atque sapiente impedit ex tempore animi, esse ratione debitis quisquam vel saepe perferendis nulla doloremque officiis, accusamus adipisci. Cumque voluptates dignissimos odio vero ipsum distinctio laudantium tenetur repudiandae optio modi id dolor quos voluptas dolorem beatae temporibus soluta, nesciunt voluptatum nobis fugit deserunt!</p>
+</section>
+
+<section id="about">
+  <h2>About Section</h2>
+  <p>This is the about section of the page Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus illo nihil modi, mollitia alias ullam. Amet aspernatur aliquid, velit quo recusandae dolore suscipit neque quia atque consequatur rem aperiam. Officiis officia recusandae, autem consectetur repellendus expedita, asperiores odio ratione saepe vitae non eligendi alias? Ipsam, recusandae dolorum sequi esse voluptas quia ab obcaecati nam pariatur, ex accusantium suscipit earum amet atque architecto ad eos similique debitis porro? Aspernatur sit suscipit totam nam harum libero repellat hic et! Praesentium expedita, dicta alias accusantium veritatis doloribus neque optio sapiente laborum dolorum distinctio vel atque enim nam. Voluptatibus optio expedita quos molestiae vel dignissimos magni ex, dolorum exercitationem obcaecati, porro commodi provident libero. Veniam similique aspernatur autem. Debitis, expedita doloremque fuga architecto omnis laudantium voluptates similique consectetur eum dolores enim unde. Eveniet repellat earum natus nostrum, soluta, et explicabo eos, possimus culpa unde necessitatibus! Tempora velit illo quod voluptate facilis, modi consequatur sint earum quasi expedita voluptas minima nisi? Harum consequuntur officiis repellat, nostrum cum maxime soluta! Alias, iusto nisi natus dolor libero perferendis fugit tenetur sunt harum quae consectetur iure quam vitae quibusdam. Reprehenderit exercitationem, reiciendis accusamus consectetur dolorem similique accusantium? Odio suscipit, commodi blanditiis quasi nesciunt cupiditate maxime corporis ipsam consequatur modi libero, ratione nihil magni consequuntur facilis ad non ipsa dolore repellendus, aspernatur voluptate. Assumenda, numquam. Enim porro recusandae laboriosam sit at nam explicabo consequuntur illum libero officiis earum, molestias fuga temporibus ducimus odio ea, modi nemo excepturi quas ratione nisi esse ab illo accusantium? Ullam, earum architecto. Enim soluta ducimus et aliquid. Aperiam ratione doloremque aliquam autem tempore alias molestiae, earum explicabo pariatur, hic consequuntur repudiandae? Ipsam, dicta nobis blanditiis ad voluptatibus architecto quae odio. Velit ducimus obcaecati incidunt cum cumque aspernatur nobis adipisci animi ullam consequuntur et a nam hic neque vitae culpa eveniet, nemo recusandae optio pariatur expedita. Quos expedita officiis porro adipisci fuga neque quibusdam repellendus perferendis, reprehenderit voluptas provident quasi minus autem. Vero cumque, doloribus consequatur dolore minus ad repellendus atque, cum alias in obcaecati non molestiae nam provident corporis tenetur, magnam nisi dolores tempora ut nostrum debitis?.</p>
+</section>
+
+<section id="services">
+  <h2>Services Section</h2>
+  <p>This is the services section of the page.</p>
+</section>
+
+<section id="contact">
+  <h2>Contact Section</h2>
+  <p>This is the contact section of the page.</p>
+</section>
+
+<script>
+  // Smooth scrolling with animations
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const targetId = this.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      
+      if (targetSection) {
+        targetSection.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // Intersection Observer to add 'active' class to sections when in view
+  const sections = document.querySelectorAll('section');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, { threshold: 0.5 });
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+</script>
+
+</body>
+</html>
