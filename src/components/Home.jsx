@@ -3,9 +3,9 @@ const Home = () => {
     <div className="py-20 bg-gradient-to-r from-blue-900 to-teal-500 text-white">
       <div className="flex justify-center h-10">
         <img
-          src="/public/logo.jpg"
+          src="./logo.jpg"
           className="h-40 rounded-full"
-          alt="Logo"
+          alt="thisis the logo"
         />
       </div>
 
