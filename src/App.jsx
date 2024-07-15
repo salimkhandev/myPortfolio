@@ -1,63 +1,33 @@
-import { useEffect } from "react";
-import "./App.css";
+import React, { Suspense, useEffect, useRef, useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Header from "./components/Header";
-import Home from "./components/Home";
-import About from "./components/About";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
+import Spinner from "./components/Spinner";
+
+const Home = React.lazy(() => import("./components/Home"));
+const About = React.lazy(() => import("./components/About"));
+const Contact = React.lazy(() => import("./components/Contact"));
+const Projects = React.lazy(() => import("./components/Projects"));
 
 function App() {
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = document.querySelectorAll("section");
-      console.log("all the sections are ",sections,"end");
-      const scrollPosition = window.scrollY + window.innerHeight / 2;
 
-      console.log("this is the scroll position ",scrollPosition);
-      console.log("this is Y",window.scrollY); 
-      console.log("window.innerHeight", window.innerHeight); 
-      console.log("window.innerHeight/2", window.innerHeight/2); 
-
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        console.log(sectionTop,"sectionTop");
-        console.log(section.offsetTop, "sectionTop");
-
-        const sectionHeight = section.offsetHeight;
-
-        if (
-          scrollPosition >= sectionTop &&
-          scrollPosition <= sectionTop + sectionHeight
-        ) {
-          const currentActive = document.querySelector("header nav ul .active");
-          if (currentActive) {
-            currentActive.classList.remove("active");
-          }
-          const newActive = document.querySelector(
-            `header nav ul li a[href='#${section.id}']`
-          );
-          newActive.parentElement.classList.add("active");
-        }
-      });
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
-    <div className="App">
-      <img src="/src/assets/logo.jpg" alt="" srcset="" />
-      <Header />
-      <main className="pt-13">
-        <Home />
-        <About />
-        <Projects />
-        <Contact />
-      </main>
-    </div>
+    <Router>
+      <div className="App">
+        <header>
+          <Header />
+          <Suspense fallback={<Spinner />}>
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route path="/contact" element={<Contact/>} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/projects" element={<Projects />} />
+            </Routes>
+          </Suspense>
+        </header>
+      </div>
+          </Router>
   );
 }
 

@@ -17,7 +17,7 @@ const Home = () => {
           <h1 className="text-5xl md:text-6xl font-bold animate-bounce">
             Welcome to My Portfolio
           </h1>
-          <p className="text-2xl md:text-3xl mt-4">Salim Khan</p>
+          <p className="text-2xl md:text-3xl mt-4">Salim Khan And You</p>
           <p className="mt-4 text-lg">Developer</p>
           <p className="mt-4 text-lg">Explore my work below!</p>
         </div>
