@@ -83,6 +83,12 @@ function App() {
             </Suspense>
           )}
         </div>
+          <div id="projects" ref={projectsRef}>
+            {renderProjects && (
+              <Suspense fallback={<Spinner />}>
+                <Projects />
+              </Suspense>
+            )}
         <div id="contact" ref={contactRef}>
           {renderContact && (
             <Suspense fallback={<Spinner />}>
@@ -90,12 +96,6 @@ function App() {
             </Suspense>
           )}
         </div>
-        <div id="projects" ref={projectsRef}>
-          {renderProjects && (
-            <Suspense fallback={<Spinner />}>
-              <Projects />
-            </Suspense>
-          )}
         </div>
       </main>
     </div>
