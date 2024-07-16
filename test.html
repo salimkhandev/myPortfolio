@@ -3,22 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Focus Example</title>
-  <script>
-    function setFocus() {
-      // Get the input element
-      var inputElement = document.getElementById("myInput");
-      
-      // Set focus on the input element
-      inputElement.focus();
+  <title>Scroll Event Example</title>
+  <style>
+    #scrollMessage {
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      display: none;
     }
-  </script>
+    .content {
+      height: 2000px; /* Just to make the page scrollable */
+    }
+  </style>
 </head>
-<body onload="setFocus()">
-  <form>
-    <label for="myInput">Enter your name:</label>
-    <input focus="here" type="text" id="wmyInput">
-    <button type="submit">Submit</button>
-  </form>
+<body>
+  <div id="scrollMessage">You are scrolling</div>
+  <div class="content">
+    <h1>Scroll down to see the message</h1>
+  </div>
+
+  <script>
+    // Select the message element
+    const scrollMessage = document.getElementById('scrollMessage');
+    
+    // Function to show the scroll message
+    const showScrollMessage = () => {
+      scrollMessage.style.display = 'block';
+      clearTimeout(window.scrollTimeout);
+      window.scrollTimeout = setTimeout(() => {
+        scrollMessage.style.display = 'none';
+      }, 1000);
+    };
+    
+    // Add event listener for scroll event
+    window.addEventListener('scroll', showScrollMessage);
+  </script>
 </body>
 </html>

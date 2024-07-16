@@ -10,7 +10,8 @@ const Contact = React.lazy(() => import("./components/Contact"));
 const Projects = React.lazy(() => import("./components/Projects"));
 
 function App() {
-  const [items, setItems] = useState(['Home']); // Initial component to load
+  const [items, setItems] = useState(['Home']);
+  console.log('The length of the item ❤️',items.length); // Initial component to load
 
   const loadMoreItems = useCallback((done) => {
     setTimeout(() => {
@@ -22,9 +23,9 @@ function App() {
         return newItems;
       });
       done();
-    }, 1000); // Simulate loading delay
+    }); // Simulate loading delay
   }, []);
-
+console.log('Load More data ❤️',typeof(loadMoreItems));
   const [isFetching] = useInfiniteScroll(loadMoreItems);
 
   const renderComponent = (name) => {
