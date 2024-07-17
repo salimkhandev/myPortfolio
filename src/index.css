@@ -4,6 +4,11 @@
 html {
   scroll-behavior: smooth;
 }
+.tcss{
+
+/* padding: 39px; */
+
+}
 header {
 background: #432fbf;
   padding: 10px 0;

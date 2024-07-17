@@ -1,18 +1,16 @@
 const Home = () => {
   return (
-    
     <div className="py-20 bg-gradient-to-r from-blue-900 to-teal-500 text-white">
-
-    <section
+      <section
         id="home"
-        className="min-h-screen flex items-center justify-center bg-gradient-to-r  from-blue-900 to-teal-500 text-white"
+        className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-900 to-teal-500 text-white"
       >
         <div className="text-center p-6 rounded-lg bg-opacity-80 bg-gray-900 shadow-lg">
-        <img
-          src="./logo.jpg"
-          className="h-36 ml-72 rounded-full"
-          alt="thisis the logo"
-        />
+          <img
+            src="./logo.jpg"
+            className="h-24 w-24 md:h-36 md:w-36 mx-auto rounded-full mb-6"
+            alt="this is the logo"
+          />
           <h1 className="text-5xl md:text-6xl font-bold animate-bounce">
             Welcome to My Portfolio
           </h1>
