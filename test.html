@@ -1,47 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scroll Event Example</title>
-  <style>
-    #scrollMessage {
-      position: fixed;
-      top: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #333;
-      color: #fff;
-      padding: 10px;
-      border-radius: 5px;
-      display: none;
-    }
-    .content {
-      height: 2000px; /* Just to make the page scrollable */
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <style>@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+
+* {
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+html {
+font-family: "Ubuntu";
+font-size: 15px;
+scroll-behavior: smooth;
+background-color: #42523f;
+}
+section {
+height: 100vh;
+width: 100%;
+background-color: #7e8081;
+display: flex;
+align-items: center;
+justify-content: center;
+text-transform: uppercase;
+}
+#home {
+background-color: #1C8106;
+}
+#about {
+background-color: #6081C3;
+}
+#footer {
+background-color: #A83E11;
+}
+nav {
+position: sticky;
+top: 0;
+background-color: #eef0f1;
+border-radius:0 0 20px 20px;
+}
+nav .container {
+width: 90%;
+max-width: 1000px;
+margin: 0 auto;
+text-align: center;
+padding: 10px;
+}
+nav .container ul li {
+display: inline-block;
+border-radius:5px;
+}
+nav .container ul li a {
+display: inline-block;
+text-decoration: none;
+padding: 10px 20px;
+color: black;
+}
+nav .container ul li.active {
+background-color: #3b49df;
+border-radius:30px;
+transition: 0.3s;
+}
+nav .container ul li.active a {
+color: #ffffff;
+}</style>
 </head>
 <body>
-  <div id="scrollMessage">You are scrolling</div>
-  <div class="content">
-    <h1>Scroll down to see the message</h1>
-  </div>
+       <nav>
+        <div class="container">
+            <ul>
+                <li class="home active"><a href="#home" >Home</a></li>
+                <li class="about "><a href="#about" active >About</a></li>
+                <li class="contact"><a href="#contact">Contact</a></li>
+                <li class="footer"><a href="#footer">Footer</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section id="home">
+        <h1>This is my home page</h1>
+    </section>
+    <section id="about">
+      
+        <h1>You can read about me here</h1>
+    </section>
+    <section id="contact">
+        <h1>Wanna Contact me just <u>click here</u></h1>
+    </section>
+    <section id="footer">
+        <h1>This page created in 2021</h1>
+    </section>
+    <script >
+const sections = document.querySelectorAll("section");
+const navLi = document.querySelectorAll("li");
+window.onscroll = () => {
+  var current = "";
 
-  <script>
-    // Select the message element
-    const scrollMessage = document.getElementById('scrollMessage');
-    
-    // Function to show the scroll message
-    const showScrollMessage = () => {
-      scrollMessage.style.display = 'block';
-      clearTimeout(window.scrollTimeout);
-      window.scrollTimeout = setTimeout(() => {
-        scrollMessage.style.display = 'none';
-      }, 1000);
-    };
-    
-    // Add event listener for scroll event
-    window.addEventListener('scroll', showScrollMessage);
-  </script>
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    console.log('Section top:',sectionTop);
+    console.log('scrollY:',scrollY);
+    if (scrollY >= sectionTop - 60) {
+      current = section.getAttribute("id"); }
+  });
+
+  navLi.forEach((li) => {
+    li.classList.remove("active");
+    if (li.classList.contains(current)) {
+      li.classList.add("active");
+    }
+  });
+};
+
+    </script>
 </body>
 </html>

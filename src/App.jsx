@@ -1,103 +1,50 @@
-import React, { Suspense, useEffect, useRef, useState } from "react";
-import Header from "./components/Header";
-import Headers from "./components/Headers";
-import Spinner from "./components/Spinner";
-
-const Home = React.lazy(() => import("./components/Home"));
-const About = React.lazy(() => import("./components/About"));
-const Contact = React.lazy(() => import("./components/Contact"));
-const Projects = React.lazy(() => import("./components/Projects"));
+import React, { useEffect } from 'react';
+import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
+import Projects from './components/Projects';
+import Headers from './components/Headers';
 
 function App() {
-  const [renderHome, setRenderHome] = useState(false);
-  const [renderAbout, setRenderAbout] = useState(false);
-  const [renderContact, setRenderContact] = useState(false);
-  const [renderProjects, setRenderProjects] = useState(false);
-
-  const homeRef = useRef(null);
-  const aboutRef = useRef(null);
-  const contactRef = useRef(null);
-  const projectsRef = useRef(null);
-
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            switch (entry.target.id) {
-              case "home":
-                setRenderHome(true);
-                break;
-              case "about":
-                setRenderAbout(true);
-                break;
-              case "contact":
-                setRenderContact(true);
-                break;
-              case "projects":
-                setRenderProjects(true);
-                break;
-              default:
-                break;
-            }
-          }
-        });
-      },
-      {
-        threshold: 0.5, // Adjust as per your needs
-      }
-    );
+    const sections = document.querySelectorAll("section");
+    const navLi = document.querySelectorAll("li");
 
-    if (homeRef.current) observer.observe(homeRef.current);
-    if (aboutRef.current) observer.observe(aboutRef.current);
-    if (contactRef.current) observer.observe(contactRef.current);
-    if (projectsRef.current) observer.observe(projectsRef.current);
+    const handleScroll = () => {
+      let current = "";
 
-    // Cleanup function for observer
-    return () => {
-      if (homeRef.current) observer.unobserve(homeRef.current);
-      if (aboutRef.current) observer.unobserve(aboutRef.current);
-      if (contactRef.current) observer.unobserve(contactRef.current);
-      if (projectsRef.current) observer.unobserve(projectsRef.current);
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        console.log('Section Top:',sectionTop);
+        if (window.scrollY >= sectionTop - 100) {
+          current = section.getAttribute("id");
+
+          console.log('current:',current);
+        }
+      });
+
+      navLi.forEach((li) => {
+        li.classList.remove("active");
+        if (li.classList.contains(current)) {
+          li.classList.add("active");
+        }
+      });
     };
-  }, []);
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []); // Empty dependency array ensures useEffect runs once after initial render
 
   return (
-    <div className="App">
-      <header>
-        {/* <Header /> */}
-        <Headers />
-      </header>
-      <main>
-        <div id="home" ref={homeRef}>
-          {renderHome && (
-            <Suspense fallback={<Spinner />}>
-              <Home />
-            </Suspense>
-          )}
-        </div>
-        <div id="about" ref={aboutRef}>
-          {renderAbout && (
-            <Suspense fallback={<Spinner />}>
-              <About />
-            </Suspense>
-          )}
-        </div>
-          <div id="projects" ref={projectsRef}>
-            {renderProjects && (
-              <Suspense fallback={<Spinner />}>
-                <Projects />
-              </Suspense>
-            )}
-        <div id="contact" ref={contactRef}>
-          {renderContact && (
-            <Suspense fallback={<Spinner />}>
-              <Contact />
-            </Suspense>
-          )}
-        </div>
-        </div>
-      </main>
+    <div>
+      <Headers />
+      <Home />
+      <About />
+      <Projects />
+      <Contact />
     </div>
   );
 }
