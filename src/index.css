@@ -4,16 +4,9 @@
 html {
   scroll-behavior: smooth;
 }
-.tcss{
 
-/* padding: 39px; */
-
-}
 header {
-background: #432fbf;
-  padding: 10px 0;
-font-size: 20px;
-border-radius: 0 0 33px 33px;
+border-radius: 0 0 25px 25px;
   top: 0;
   z-index: 1000;
   transition: background-color 0.3s ease, border-radius 0.3s ease;
