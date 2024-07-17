@@ -19,3 +19,15 @@ border-radius: 0 0 25px 25px;
     padding-bottom: 3px;
   min-width: 90px;
 }
+/* Create a new CSS file (e.g., DynamicCaption.css) */
+.caption {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.caption.fade-out {
+  opacity: 0;
+}
