@@ -1,18 +1,12 @@
+import React from 'react';
+import { BarLoader } from 'react-spinners';
 
-import { Bars } from "react-loader-spinner";
-function Spinner() {
+const Loader = () => {
   return (
-    <div className="flex justify-center items-center h-screen">
-      <Bars
-        height={80}
-        width={80}
-        color="#4fa94d"
-        ariaLabel="bars-loading"
-        wrapperStyle={{}}
-        wrapperClass="" 
-        visible={true}/>
+    <div className="loader-container">
+      <BarLoader color={'#36D7B7'} loading={true} />
     </div>
   );
 }
 
-export default Spinner;
+export default Loader;

@@ -1,29 +1,16 @@
-const txt = "Welcome! I'm Salim Khan";
+import React from 'react';
+import { BounceLoader } from 'react-spinners';
 
-const SplashScreen = () => (
+const Loader = () => {
+  return (
+    <div className="loader-container">
+      <BounceLoader
+        color="#1c1ab1"
+        size={112}
+        loading={true}
+      />
+    </div>
+  );
+}
 
-
-  <div className="page" style={{
-    backgroundImage: "url('/splashBg.png')",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  }
-  }>
-
-
-    <h1 className="txt page__txt black-ops-one-regular" aria-label={txt}>
-      {txt.split('').map((character, key) => (
-        <span
-          key={key}
-          className={`txt__character ${character === ' ' ? 'txt__space' : ''}`}
-          style={{ '--i': key }}
-        >
-          {character}
-        </span>
-      ))}
-    </h1>
-
-  </div>
-);
-
-export default SplashScreen;
+export default Loader;

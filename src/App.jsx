@@ -15,7 +15,7 @@ function App() {
     // Simulate a delay to hide the splash screen after 3 seconds
     const splashTimeout = setTimeout(() => {
       setShowSplash(false);
-    }, 6000);
+    }, 3000);
 
     return () => clearTimeout(splashTimeout); // Cleanup timeout on unmount
 

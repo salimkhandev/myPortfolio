@@ -23,15 +23,21 @@ border-radius: 0 0 25px 25px;
     padding-bottom: 3px;
   min-width: 90px;
 }
-/* Create a new CSS file (e.g., DynamicCaption.css) */
+/* DynamicCaption.css */
+
 .highlight {
   color: blue;
-  font-size: x-large;
-   text-shadow: 
-    2px 2px 2px #f0f0f0,  /* Light gray inner shadow */
-    -2px -2px 5px #333333;
- 
+  /* Blue text color */
+  font-size: 24px;
+  /* Adjusted font size, x-large is approximately 24px */
+  text-shadow:
+    1px 1px 1px #ccc,
+    /* Light gray inner shadow */
+    0 0 5px #333;
+  /* Darker outer shadow */
 }
+
+
 .page {
   display: grid;
   min-height: 100vh;
@@ -74,6 +80,37 @@ border-radius: 0 0 25px 25px;
   }
 
   95%,
+  100% {
+    opacity: 0;
+  }
+}
+
+
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('/splashBg.png');
+  /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+  background-size: cover;
+  /* Ensures the image covers the entire container */
+  background-position: center;
+  /* Centers the image within the container */
+  animation: fadeInOut 6s ease-in infinite alternate;
+  /* Adjust timing and animation as needed */
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
   100% {
     opacity: 0;
   }

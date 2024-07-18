@@ -26,13 +26,13 @@ const Home = () => {
             className="h-24 w-24 md:h-36 md:w-36 mx-auto rounded-full mb-6"
             alt="this is the logo"
           />
-          <h1 className="text-5xl md:text-6xl font-bold animate-bounce">
-            Welcome to My Portfolio
+          <h1 className="text-5xl a70:text-5xl black-ops-one-regular font-bold">
+            Welcome
           </h1>
           <p className="text-2xl md:text-3xl mt-4">Salim Khan</p>
           <p className="mt-4 text-lg">
             <ReactTyped
-              className=" text-white"
+              className="  text-white"
               strings={strings}
               typeSpeed={40}
               backSpeed={50}
