@@ -1,12 +1,29 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
 import Projects from './components/Projects';
 import Headers from './components/Headers';
+import SplashScreen from './components/SplashScreen';
 
 function App() {
+  const [showSplash, setShowSplash] = useState(true);
+  
+
+  
   useEffect(() => {
+    // Simulate a delay to hide the splash screen after 3 seconds
+    const splashTimeout = setTimeout(() => {
+      setShowSplash(false);
+    }, 6000);
+
+    return () => clearTimeout(splashTimeout); // Cleanup timeout on unmount
+
+  }, []); 
+
+  useEffect(() => {
+
+
     const sections = document.querySelectorAll("section");
     const navLi = document.querySelectorAll("li");
 
@@ -36,15 +53,21 @@ function App() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []); // Empty dependency array ensures useEffect runs once after initial render
+  }, [showSplash]); // Empty dependency array ensures useEffect runs once after initial render
 
   return (
     <div>
-      <Headers />
-      <Home />
-      <About />
-      <Projects />
-      <Contact />
+      {
+        showSplash?(<SplashScreen/>):(
+          <>
+          <Headers />
+          <Home />
+          <About />
+          <Projects />
+          <Contact />
+          </>
+        )
+      }
     </div>
   );
 }

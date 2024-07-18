@@ -1,10 +1,18 @@
+import { ReactTyped } from "react-typed";
+
 const Home = () => {
+  const strings = [
+    "<span class='highlight'>I'm</span> a Web Developer",
+    "<span class='highlight'>I'm</span> a UI/UX Developer",
+    "<span class='highlight'>I'm</span> a Backend Developer",
+    "<span class='highlight'>I'm</span> a Tester"
+  ]
   return (
     <div 
     
        className="py-20 parent-div bg-gradient-to-r from-blue-900 to-teal-500 text-white "
       style={{
-        backgroundImage: "url('/public/bg.png')",
+        backgroundImage: "url('/bg.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
 }
@@ -22,7 +30,14 @@ const Home = () => {
             Welcome to My Portfolio
           </h1>
           <p className="text-2xl md:text-3xl mt-4">Salim Khan</p>
-          <p className="mt-4 text-lg">Developer</p>
+          <p className="mt-4 text-lg">
+            <ReactTyped
+              className=" text-white"
+              strings={strings}
+              typeSpeed={40}
+              backSpeed={50}
+              loop
+            /></p>
           <p className="mt-4 text-lg">Explore my work below!</p>
         </div>
       </section>
