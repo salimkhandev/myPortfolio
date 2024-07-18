@@ -19,8 +19,15 @@ const Projects = () => {
 
   return (
     <section
+      // style={{
+      //   backgroundImage: "url('/bg.png')",
+      //   backgroundSize: "cover",
+      //   backgroundPosition: "center",
+      //   backgroundAttachment: 'fixed',
+      // }
+      // }
       id="projects"
-      className="min-h-screen flex items-center justify-center bg-gray-100"
+      className="min-h-screen text-white flex items-center justify-center "
     >
       <div className="max-w-4xl">
         <h2 className="text-3xl font-bold text-center">Projects</h2>

@@ -3,13 +3,29 @@
 const Contact = () => {
   return (
     <section
+      // style={{
+      //   backgroundImage: "url('/bg.png')",
+      //   backgroundSize: "cover",
+      //   backgroundPosition: "center",
+      //   backgroundAttachment: 'fixed'
+      // }
+      // }
       id="contact"
-      className="min-h-screen flex items-center justify-center bg-white"
+      className="min-h-screen flex items-center text-white justify-center"
     >
-      <div className="max-w-md w-full">
+      <div className="max-w-md w-full "
+      
+        style={{
+          backgroundImage: "url('/bg.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: 'fixed',
+          borderRadius:'20px'
+        }}
+      >
         <h2 className="text-3xl font-bold text-center">Contact Me</h2>
         <form className="mt-8 space-y-4">
-          <div>
+          <div >
             <label htmlFor="name" className="block text-sm font-bold">
               Name:
             </label>

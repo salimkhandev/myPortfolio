@@ -10,17 +10,23 @@ const Home = () => {
   return (
     <div 
     
-       className="py-20 parent-div bg-gradient-to-r from-blue-900 to-teal-500 text-white "
-      style={{
-        backgroundImage: "url('/bg.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-}
-}>      <section
+       className="py-20   text-white "
+   
+    >      <section
         id="home"
         className="min-h-screen flex items-center justify-center"
       >
-        <div className="text-center p-6 rounded-lg bg-opacity-80 bg-gray-900 shadow-lg">
+        <div className="text-center p-6 rounded-lg bg-opacity-80 bg-gray-900 shadow-lg"
+        
+          style={{
+            backgroundImage: "url('/bg.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundAttachment: 'fixed'
+          }}
+
+        >
+          
           <img
             src="./logo.jpg"
             className="h-24 w-24 md:h-36 md:w-36 mx-auto rounded-full mb-6"

@@ -3,8 +3,9 @@
 const About = () => {
   return (
     <section
+   
       id="about"
-      className="min-h-screen flex items-center justify-center bg-white"
+      className="min-h-screen flex bg-transparent items-center text-white justify-center"
     >
       <div className="max-w-2xl text-center">
         <h2 className="text-3xl font-bold">About Me</h2>

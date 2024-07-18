@@ -2,7 +2,14 @@ import PropTypes from "prop-types";
 
 const Project = (props) => {
   return (
-    <div className="border p-4 mb-4">
+    <div
+      style={{
+        backgroundImage: "url('/bg.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: 'fixed'
+      }
+      } className="border p-4 text-white mb-4">
       <h3 className="text-2xl font-bold">{props.title}</h3>
       <p>{props.description}</p>
       <a
