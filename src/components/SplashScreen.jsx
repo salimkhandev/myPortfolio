@@ -4,7 +4,7 @@ const SplashScreen = () => (
 
 
   <div className="page" style={{
-    backgroundImage: "url('/public/splashBg.png')",
+    backgroundImage: "url('/splashBg.png')",
     backgroundSize: "cover",
     backgroundPosition: "center",
   }
