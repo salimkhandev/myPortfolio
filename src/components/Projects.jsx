@@ -1,4 +1,3 @@
-
 import Project from "./Project";
 
 const Projects = () => {
@@ -19,19 +18,14 @@ const Projects = () => {
 
   return (
     <section
-      // style={{
-      //   backgroundImage: "url('/bg.png')",
-      //   backgroundSize: "cover",
-      //   backgroundPosition: "center",
-      //   backgroundAttachment: 'fixed',
-      // }
-      // }
       id="projects"
-      className="min-h-screen text-white flex items-center justify-center "
+      className="min-h-screen flex items-center justify-center relative"
     >
-      <div className="max-w-4xl">
-        <h2 className="text-3xl font-bold text-center">Projects</h2>
-        <div className="mt-8">
+      <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-md"></div>
+      <div className="relative z-10 max-w-4xl p-6 bg-white bg-opacity-90 rounded-lg shadow-lg">
+        <h2 className="text-3xl font-bold text-center text-gray-900" 
+        >Projects</h2>
+        <div className="mt-8 space-y-6">
           {projectList.map((proj, index) => (
             <Project
               key={index}

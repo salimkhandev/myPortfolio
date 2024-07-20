@@ -4,7 +4,7 @@ const Project = (props) => {
   return (
     <div
       style={{
-        backgroundImage: "url('/bg.png')",
+        backgroundImage: "url('/public/myPicForBg.jpeg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: 'fixed'
