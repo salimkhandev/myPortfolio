@@ -3,36 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="index.css">
-    <style>section {
-height: 100vh;
-width: 100%;
-background-color: #7e8081;
-display: flex;
-align-items: center;
-justify-content: center;
-text-transform: uppercase;
-}</style>
+    <title>Blurred and Transparent Background</title>
+    <link rel="stylesheet" href="styles.css">
+    <style> body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.background {
+    background-image: url('/public/myPicForBg.jpeg'); /* Replace with your background image URL */
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    background-color: rgba(255, 255, 255,0.); /* White background with 60% opacity */
+    /* backdrop-filter: blur(10px);  */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+</style>
 </head>
 <body>
-<section id="one">
-    this is section one
-</section>
-<section id="two">
-    this is section one
-</section>
-<section id="three">
-    this is section two
-</section>
-    <script >
-      const one=document.getElementById('one')
-      console.log(one.offsetTop);
-      const two=document.getElementById('two')
-      console.log(two.offsetTop);
-      const three=document.getElementById('three')
-      console.log(two.offsetTop);
-      
-    </script>
+    <div class="background">
+        <div class="content">
+            <h1>Hello, World!</h1>
+            <p>This is a simple example of a blurred and transparent background.</p>
+        </div>
+    </div>
 </body>
 </html>

@@ -32,7 +32,7 @@ const Home = () => {
             className="h-24 w-24 md:h-36 md:w-36 mx-auto rounded-full mb-6"
             alt="this is the logo"
           />
-          <h1 className="text-5xl a70:text-5xl black-ops-one-regular transition-colors duration-300 ease-in-out hover:text-red-500 font-bold animate-bounce">
+          <h1 className="text-5xl a70:text-5xl black-ops-one-regular transition-colors duration-300 ease-in-out hover:text-gray-500 font-bold animate-bounce">
             Welcome
           </h1>
           <p className="text-2xl md:text-3xl mt-4">Salim Khan</p>

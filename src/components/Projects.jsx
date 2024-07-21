@@ -1,3 +1,4 @@
+
 import Project from "./Project";
 
 const Projects = () => {
@@ -19,13 +20,19 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen flex items-center justify-center relative"
+      className="min-h-screen text-white flex items-center justify-center "
     >
-      <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-md"></div>
-      <div className="relative z-10 max-w-4xl p-6 bg-white bg-opacity-90 rounded-lg shadow-lg">
-        <h2 className="text-3xl font-bold text-center text-gray-900" 
+      <div className="max-w-4xl" 
+        style={{
+          backgroundColor: 'rgba(0,0 ,0 ,0.5)', backdropFilter: 'blur(10px)', // Adjust the blur intensity
+          WebkitBackdropFilter: 'blur(10px)'
+        }}
+      >
+        <h2 className="text-3xl font-bold text-center pt-6 black-ops-one-regular transition-colors duration-300 ease-in-out hover:text-gray-500"
+        
+        
         >Projects</h2>
-        <div className="mt-8 space-y-6">
+        <div className="mt-10" >
           {projectList.map((proj, index) => (
             <Project
               key={index}
