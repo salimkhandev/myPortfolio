@@ -7,7 +7,7 @@ import Headers from './components/Headers';
 import SplashScreen from './components/SplashScreen';
 
 function App() {
-  const [showSplash, setShowSplash] = useState(true);
+  const [showSplash, setShowSplash] = useState(false);
   
 
   
