@@ -4,14 +4,17 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Projects from './components/Projects';
 import Headers from './components/Headers';
+import AdminPanel from './components/AdminPanel';
 import SplashScreen from './components/SplashScreen';
 
 function App() {
   const [showSplash, setShowSplash] = useState(false);
   
 
+  const path = window.location.pathname;
   
   useEffect(() => {
+   
     // Simulate a delay to hide the splash screen after 3 seconds
     const splashTimeout = setTimeout(() => {
       setShowSplash(false);
@@ -57,6 +60,7 @@ function App() {
 
   return (
     <div>
+      {path === '/admin' && < AdminPanel/>}
       {
         showSplash?(<SplashScreen/>):(
           <>
