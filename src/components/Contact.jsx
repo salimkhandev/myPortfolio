@@ -25,7 +25,7 @@ const Contact = () => {
         // Example of how to submit the form data
         // You can use fetch or axios to send form data to your server
         try {
-            const response = await axios.post('http://localhost:3000/submit-form', {
+            const response = await axios.post('https://salim-portfolio-backend.vercel.app/submit-form', {
                 ...values,
                 recaptchaToken: recaptchaValue,
             }, {
