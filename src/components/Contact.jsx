@@ -116,11 +116,12 @@ const Contact = () => {
                             </div>
                             <div className="mt-4">
                                 <ReCAPTCHA
-                                    sitekey="6LdVUhUqAAAAAGsraY8KQc_Y8XJbn7nrookRwzk-" // Replace with your site key
+                                    sitekey="6LfPzhUqAAAAAC7Qz5KXAwdmLlHVE83PtS2uyzXO" // Replace with your site key
                                     onChange={handleRecaptchaChange}
                                 />
                             </div>
                             <button
+                            
                                 type="submit"
                                 disabled={isSubmitting}
                                 className="w-full bg-blue-500 text-white py-2 rounded-md"
