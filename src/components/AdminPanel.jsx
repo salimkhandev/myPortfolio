@@ -4,7 +4,7 @@ const AdminPanel = () => {
     const [documents, setDocuments] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:3000/admin') // Ensure this URL matches your backend endpoint
+        fetch('https://portfolio-backend-git-main-salimkhandevs-projects.vercel.app/admin') // Ensure this URL matches your backend endpoint
             .then(response => response.json())
             .then(data => setDocuments(data))
             .catch(error => console.error('Error fetching documents:', error));
