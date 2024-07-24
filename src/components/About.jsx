@@ -3,7 +3,7 @@ const About = () => {
     <section
       id="about"
   
-      className="min-h-screen flex  text-white justify-center py-16"
+      className="min-h-screen flex  text-white justify-center bg-black bg-opacity-70 py-16"
     >
       <div className="max-w-4xl px-6 text-center"  
         style={{

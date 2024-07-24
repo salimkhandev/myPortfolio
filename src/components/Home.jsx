@@ -9,20 +9,20 @@ const Home = () => {
   ]
   return (
     <div 
-    
-       className="py-20   text-white "
+       className="py-20 text-white bg-black bg-opacity-70"
    
     >      <section
         id="home"
         className="min-h-screen flex items-center justify-center"
       >
-        <div className="text-center w-[904px] p-6 rounded-lg bg-opacity-80 bg-gray-900 shadow-lg"
+        <div className="text-center w-[904px] p-6 rounded-lg shadow-lg"
         
           style={{
             backgroundImage: "url('/bg.png')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundAttachment: 'fixed'
+
           }}
 
         >

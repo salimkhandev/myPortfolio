@@ -2,10 +2,12 @@ import { useState } from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import ReCAPTCHA from 'react-google-recaptcha';
 import axios from 'axios';
+import Snackbar from "@mui/material/Snackbar";
 
 
 const Contact = () => {
     const [recaptchaValue, setRecaptchaValue] = useState('');
+    const [snackbar, setSnackbar] = useState({ open: false, message: "Hello and" });
 
     const handleRecaptchaChange = (value) => {
         setRecaptchaValue(value);
@@ -18,7 +20,7 @@ const Contact = () => {
             return;
         }
 
-        console.log("the the token is",recaptchaValue);
+        // console.log("the the token is",recaptchaValue);
         // Form submission logic here
         // alert(`Form submitted with values: ${JSON.stringify(values, null, 2)}`);/
 
@@ -45,12 +47,16 @@ const Contact = () => {
 
 
         setSubmitting(false);
+        setSnackbar({ open: true, message: "form submitted!" });
+    };
+    const handleCloseSnackbar = () => {
+        setSnackbar({ open: false, message: "" });
     };
 
     return (
         <section
             id="contact"
-            className="min-h-screen flex items-center justify-center relative"
+            className="min-h-screen flex items-center justify-center relative bg-black bg-opacity-70"
         >
             <div className="absolute"></div>
             <div className="relative z-10  p-6 w-[904px] rounded-lg shadow-lg"
@@ -130,11 +136,24 @@ const Contact = () => {
                                 disabled={isSubmitting}
                                 className="w-full bg-blue-500 text-white py-2 rounded-md"
                             >
-                                Submit
+                                {isSubmitting ? (
+                                    <div className="flex place-content-center items-center">
+                                        <div className="spinner"></div>
+                                    </div>
+                                ) : (
+                                    'Submit'
+                                )}
                             </button>
                         </Form>
                     )}
                 </Formik>
+                    <Snackbar
+                        open={snackbar.open}
+                        autoHideDuration={3000}
+                        onClose={handleCloseSnackbar}
+                        message={snackbar.message}
+                        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+                    />
             </div>
         </section>
     );

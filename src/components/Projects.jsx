@@ -20,7 +20,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen text-white flex items-center justify-center "
+      className="min-h-screen text-white flex items-center justify-center bg-black bg-opacity-70 "
     >
       <div className="max-w-4xl" 
         style={{
