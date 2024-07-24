@@ -52,9 +52,13 @@ const Contact = () => {
             id="contact"
             className="min-h-screen flex items-center justify-center relative"
         >
-            <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-md"></div>
-            <div className="relative z-10 max-w-md w-full p-6 bg-white bg-opacity-90 rounded-lg shadow-lg">
-                <h2 className="text-3xl font-bold text-center text-gray-900">Contact Me</h2>
+            <div className="absolute"></div>
+            <div className="relative z-10  p-6 w-[904px] rounded-lg shadow-lg"
+                style={{
+                    backgroundColor: 'rgba(0,0 ,0 ,0.5)', backdropFilter: 'blur(10px)', // Adjust the blur intensity
+                    WebkitBackdropFilter: 'blur(10px)',
+                }}>
+                <h2 className="text-3xl font-bold  text-white text-center">Contact Me</h2>
                 <Formik
                     initialValues={{ name: '', email: '', message: '' }}
                     validate={values => {
@@ -79,7 +83,7 @@ const Contact = () => {
                     {({ isSubmitting }) => (
                         <Form className="mt-8 space-y-4">
                             <div>
-                                <label htmlFor="name" className="block text-sm font-bold text-gray-700">
+                                <label htmlFor="name" className="block text-sm font-bold text-white">
                                     Name:
                                 </label>
                                 <Field
@@ -91,7 +95,7 @@ const Contact = () => {
                                 <ErrorMessage name="name" component="div" className="text-red-500 text-sm mt-1" />
                             </div>
                             <div>
-                                <label htmlFor="email" className="block text-sm font-bold text-gray-700">
+                                <label htmlFor="email" className="block text-sm font-bold text-white">
                                     Email:
                                 </label>
                                 <Field
@@ -103,7 +107,7 @@ const Contact = () => {
                                 <ErrorMessage name="email" component="div" className="text-red-500 text-sm mt-1" />
                             </div>
                             <div>
-                                <label htmlFor="message" className="block text-sm font-bold text-gray-700">
+                                <label htmlFor="message" className="block text-sm font-bold text-white">
                                     Message:
                                 </label>
                                 <Field

@@ -38,7 +38,7 @@ function App() {
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
         console.log('Section Top:', sectionTop);
-        if (window.scrollY >= sectionTop - 100) {
+        if (window.scrollY >= sectionTop - 150) {
           current = section.getAttribute("id");
 
           console.log('current:', current);
@@ -58,12 +58,10 @@ function App() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [showSplash]); // Empty dependency array ensures useEffect runs once after initial render
-
+  }, [showSplash]);
   return (
     <Router>
       <div>
-        {/* {path === '/admin' && < AdminPanel/>} */}
         {
           showSplash ? (<SplashScreen />) : (
             <>

@@ -3,7 +3,7 @@ import { faHome, faInbox, faUser,faInfoCircle } from '@fortawesome/free-solid-sv
 
 const Header = () => {
   return (
-    <header className="fixed w-full text-white top-0 z-50  bg-blue-700 py-1 px-4  text-center transition-all duration-300 " >
+    <header className="fixed w-full text-white top-0 z-50  bg-black py-1 px-4  text-center transition-all duration-300 " >
       <nav className="container mx-auto flex justify-center py-4">
         <ul className="flex space-x-4">
           <li className="home active">
