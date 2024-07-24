@@ -11,7 +11,7 @@ function App() {
   const [showSplash, setShowSplash] = useState(false);
   
 
-  const path = window.location.pathname;
+  // const path = window.location.pathname;
   
   useEffect(() => {
    
@@ -60,10 +60,11 @@ function App() {
 
   return (
     <div>
-      {path === '/admin' && < AdminPanel/>}
+      {/* {path === '/admin' && < AdminPanel/>} */}
       {
         showSplash?(<SplashScreen/>):(
           <>
+            < AdminPanel />
           <Headers />
           <Home />
           <About />
