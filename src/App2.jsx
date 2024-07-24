@@ -1,32 +1,79 @@
-import React, { useState, useEffect } from 'react';
-import 'tailwindcss/tailwind.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
+import Projects from './components/Projects';
+import Headers from './components/Headers';
+import AdminPanel from './components/AdminPanel';
+import SplashScreen from './components/SplashScreen';
 
-const MyComponent = () => {
-  const [documents, setDocuments] = useState([]);
+function App() {
+  const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:3000/admin') // Ensure this URL matches your backend endpoint
-      .then(response => response.json())
-      .then(data => setDocuments(data))
-      .catch(error => console.error('Error fetching documents:', error));
+    // Simulate a delay to hide the splash screen after 3 seconds
+    const splashTimeout = setTimeout(() => {
+      setShowSplash(false);
+    }, 3000);
+
+    return () => clearTimeout(splashTimeout); // Cleanup timeout on unmount
   }, []);
 
-  const bgColors = ['bg-blue-500', 'bg-green-500'];
+  useEffect(() => {
+    const sections = document.querySelectorAll('section');
+    const navLi = document.querySelectorAll('li');
+
+    const handleScroll = () => {
+      let current = '';
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        if (window.scrollY >= sectionTop - 100) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLi.forEach((li) => {
+        li.classList.remove('active');
+        if (li.classList.contains(current)) {
+          li.classList.add('active');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [showSplash]); // Empty dependency array ensures useEffect runs once after initial render
 
   return (
-    <div className="min-h-screen p-10 bg-gray-900 text-white">
-      <h1 className="text-3xl font-bold mb-6">Documents</h1>
-      <ul className="space-y-4">
-        {documents.map((doc, index) => (
-          <li key={doc._id} className={`p-6 rounded-lg shadow-md ${bgColors[index % bgColors.length]}`}>
-            <h2 className="text-2xl font-semibold">{index + 1} {doc.name}</h2>
-            <p className="text-lg">Email: {doc.email}</p>
-            <p className="text-lg">Message: {doc.message}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <Router>
+      <div>
+        {showSplash ? (
+          <SplashScreen />
+        ) : (
+          <Routes>
+            <Route path="/admin" element={<AdminPanel />} />
+            <Route
+              path="/"
+              element={
+                <>
+                  <Headers />
+                  <Home />
+                  <About />
+                  <Projects />
+                  <Contact />
+                </>
+              }
+            />
+          </Routes>
+        )}
+      </div>
+    </Router>
   );
-};
+}
 
-export default MyComponent;
+export default App;

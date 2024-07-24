@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
@@ -9,12 +11,12 @@ import SplashScreen from './components/SplashScreen';
 
 function App() {
   const [showSplash, setShowSplash] = useState(false);
-  
+
 
   // const path = window.location.pathname;
-  
+
   useEffect(() => {
-   
+
     // Simulate a delay to hide the splash screen after 3 seconds
     const splashTimeout = setTimeout(() => {
       setShowSplash(false);
@@ -22,7 +24,7 @@ function App() {
 
     return () => clearTimeout(splashTimeout); // Cleanup timeout on unmount
 
-  }, []); 
+  }, []);
 
   useEffect(() => {
 
@@ -35,11 +37,11 @@ function App() {
 
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
-        console.log('Section Top:',sectionTop);
+        console.log('Section Top:', sectionTop);
         if (window.scrollY >= sectionTop - 100) {
           current = section.getAttribute("id");
 
-          console.log('current:',current);
+          console.log('current:', current);
         }
       });
 
@@ -59,21 +61,29 @@ function App() {
   }, [showSplash]); // Empty dependency array ensures useEffect runs once after initial render
 
   return (
-    <div>
-      {/* {path === '/admin' && < AdminPanel/>} */}
-      {
-        showSplash?(<SplashScreen/>):(
-          <>
-            < AdminPanel />
-          <Headers />
-          <Home />
-          <About />
-          <Projects />
-          <Contact />
-          </>
-        )
-      }
-    </div>
+    <Router>
+      <div>
+        {/* {path === '/admin' && < AdminPanel/>} */}
+        {
+          showSplash ? (<SplashScreen />) : (
+            <>
+              <Routes>
+                <Route path='admin' element={<AdminPanel />} />
+                <Route path='/' element={
+                  <>
+                    <Headers />
+                    <Home />
+                    <About />
+                    <Projects />
+                    <Contact />
+                  </>
+                } />
+              </Routes>
+            </>
+          )
+        }
+      </div>
+    </Router>
   );
 }
 
