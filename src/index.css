@@ -152,3 +152,19 @@ body::-webkit-scrollbar {
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 412px) {
+body {
+    /* Adjust the opacity as needed */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("/mdProPic.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    /* padding-top: 60px; */
+  }
+}
