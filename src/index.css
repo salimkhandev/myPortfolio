@@ -153,7 +153,7 @@ body::-webkit-scrollbar {
   }
 }
 
-@media (max-width: 412px) {
+@media (min-width: 412px) {
 body {
     /* Adjust the opacity as needed */
     margin: 0;
