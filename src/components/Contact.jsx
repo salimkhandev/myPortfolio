@@ -7,7 +7,7 @@ import Snackbar from "@mui/material/Snackbar";
 
 const Contact = () => {
     const [recaptchaValue, setRecaptchaValue] = useState('');
-    const [snackbar, setSnackbar] = useState({ open: false, message: "Hello and" });
+    const [snackbar, setSnackbar] = useState({ open: false, message: "" });
 
     const handleRecaptchaChange = (value) => {
         setRecaptchaValue(value);
@@ -47,7 +47,7 @@ const Contact = () => {
 
 
         setSubmitting(false);
-        setSnackbar({ open: true, message: "form submitted!" });
+        setSnackbar({ open: true, message: "Thank you! Your message has been sent." });
     };
     const handleCloseSnackbar = () => {
         setSnackbar({ open: false, message: "" });
@@ -130,13 +130,15 @@ const Contact = () => {
                                     onChange={handleRecaptchaChange}
                                 />
                             </div>
+                            <div className='w-full  flex justify-center '>
+
                             <button
                             
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="bg-gray-700 ml-72 w-52 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded"
+                                className="bg-gray-700 hover:bg-gray-800  text-white font-bold py-2 px-4 rounded"
                             >
-                                {isSubmitting ? (
+                                {isSubmitting ? ( 
                                     <div className="flex place-content-center items-center">
                                         <div className="spinner"></div>
                                     </div>
@@ -144,6 +146,7 @@ const Contact = () => {
                                     'Submit' 
                                 )}
                             </button>
+                            </div>
                         </Form>
                     )}
                 </Formik>
