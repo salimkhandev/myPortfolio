@@ -23,7 +23,7 @@ const Home = () => {
           
           <img
             src="/profilePic.jpeg"
-            className="h-24 w-24 md:h-48 md:w-48 mx-auto rounded-full mb-6"
+            className="h-52 w-52 md:h-48 md:w-48 mx-auto rounded-full mb-6"
             alt="this is the logo"
           />
           <span className="text-5xl a70:text-5xl black-ops-one-regular svg transition-colors duration-300 ease-in-out hover:text-green-900 font-bold animate-bounce">
