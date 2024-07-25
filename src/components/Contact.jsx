@@ -64,7 +64,7 @@ const Contact = () => {
                     backgroundColor: 'rgba(0,0 ,0 ,0.5)', backdropFilter: 'blur(10px)', // Adjust the blur intensity
                     WebkitBackdropFilter: 'blur(10px)',
                 }}>
-                <h2 className="text-3xl font-bold  text-white text-center">Contact Me</h2>
+                <h2 className="text-3xl font-bold black-ops-one-regular text-white text-center">Contact Me</h2>
                 <Formik
                     initialValues={{ name: '', email: '', message: '' }}
                     validate={values => {
@@ -134,14 +134,14 @@ const Contact = () => {
                             
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="w-full bg-blue-500 text-white py-2 rounded-md"
+                                className="bg-gray-700 ml-72 w-52 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded"
                             >
                                 {isSubmitting ? (
                                     <div className="flex place-content-center items-center">
                                         <div className="spinner"></div>
                                     </div>
                                 ) : (
-                                    'Submit'
+                                    'Submit' 
                                 )}
                             </button>
                         </Form>

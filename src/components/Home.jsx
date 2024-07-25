@@ -15,11 +15,13 @@ const Home = () => {
         id="home"
         className="min-h-screen flex items-center justify-center"
       >
-        <div className="text-center w-[904px] p-6 rounded-lg shadow-lg"
+        <div className="text-center  p-6 rounded-lg "
         
           style={{
-            backgroundImage: "url('/bg.png')",
+            // backgroundImage: "url('/public/removebg2.png')",
             backgroundSize: "cover",
+            backgroundRepeat: 'no-repeat',
+
             backgroundPosition: "center",
             backgroundAttachment: 'fixed'
 
@@ -28,13 +30,13 @@ const Home = () => {
         >
           
           <img
-            src="./logo.jpg"
+            src="/public/profilePic.jpeg"
             className="h-24 w-24 md:h-36 md:w-36 mx-auto rounded-full mb-6"
             alt="this is the logo"
           />
-          <h1 className="text-5xl a70:text-5xl black-ops-one-regular svg transition-colors duration-300 ease-in-out hover:text-gray-500 font-bold animate-bounce">
+          <span className="text-5xl a70:text-5xl black-ops-one-regular svg transition-colors duration-300 ease-in-out hover:text-green-900 font-bold animate-bounce">
             Welcome
-          </h1>
+          </span>
           <p className="text-2xl md:text-3xl mt-4">Salim Khan</p>
           <p className="mt-4 text-lg">
             <ReactTyped
