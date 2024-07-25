@@ -17,20 +17,12 @@ const Home = () => {
       >
         <div className="text-center  p-6 rounded-lg "
         
-          style={{
-            // backgroundImage: "url('/public/removebg2.png')",
-            backgroundSize: "cover",
-            backgroundRepeat: 'no-repeat',
-
-            backgroundPosition: "center",
-            backgroundAttachment: 'fixed'
-
-          }}
+    
 
         >
           
           <img
-            src="/public/profilePic.jpeg"
+            src="/profilePic.jpeg"
             className="h-24 w-24 md:h-36 md:w-36 mx-auto rounded-full mb-6"
             alt="this is the logo"
           />

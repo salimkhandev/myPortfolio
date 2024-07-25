@@ -1,3 +1,4 @@
+import '../App.css'
 const About = () => {
   return (
     <section

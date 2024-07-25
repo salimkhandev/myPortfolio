@@ -25,7 +25,7 @@ const AdminPanel = () => {
     const bgColors = ['bg-blue-500', 'bg-green-500'];
 
     return (
-        <div className="min-h-screen p-10 text-white">
+        <div className="min-h-screen p-10 text-white submitted-forms bg-gray-900">
             <h1 className="text-3xl font-bold mb-6">Submitted Forms</h1>
             {
                 isloading ? (<SplashScreen />):

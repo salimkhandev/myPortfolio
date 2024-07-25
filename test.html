@@ -1,26 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <style>
-    .block-element {
-      background-color: lightblue;
-      border: 1px solid blue;
-      padding: 10px;
-      margin: 10px 0;
-    }
-    .inline-element {
-      background-color: lightgreen;
-      border: 1px solid green;
-      padding: 5px;
-      margin: 0 5px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Colors Example</title>
+    <style>
+        .bg-red { background-color: red; }
+        .bg-blue { background-color: blue; }
+        .bg-green { background-color: green; }
+        .bg-yellow { background-color: yellow; }
+        .item { padding: 10px; margin: 5px; color: white; }
+    </style>
 </head>
 <body>
-  <div class="block-element">This is a block element.</div>
-  <div class="block-element">This is another block element.</div>
-  
-  <span class="inline-element">This is an inline element.</span>
-  <span class="inline-element">This is another inline element.</span>
+    <ul id="itemsList"></ul>
+
+    <script>
+        const items = [
+            { id: 1, name: 'Item 1' },
+            { id: 2, name: 'Item 2' },
+            { id: 3, name: 'Item 3' },
+            { id: 4, name: 'Item 4' },
+            { id: 5, name: 'Item 5' },
+            { id: 6, name: 'Item 5' },
+            { id: 7, name: 'Item 5' },
+        ];
+
+        const bgColors = ['bg-red', 'bg-blue', 'bg-green', 'bg-yellow'];
+
+        const itemsList = document.getElementById('itemsList');
+
+        items.forEach((item, index) => {
+            const listItem = document.createElement('li');
+            listItem.className = `item ${bgColors[index %bgColors.length]}`;
+            listItem.textContent = item.name;
+            itemsList.appendChild(listItem);
+        });
+    </script>
 </body>
 </html>
