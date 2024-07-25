@@ -16,7 +16,7 @@ const AdminPanel = () => {
     useEffect(() => {
         fetch('https://portfolio-backend-git-main-salimkhandevs-projects.vercel.app/admin') // Ensure this URL matches your backend endpoint
             .then(response => response.json())
-            .then((data) => {setDocuments(data)
+            .then(data => {setDocuments(data)
                 setLoading(false)
             })
             .catch(error => console.error('Error fetching documents:', error));
@@ -31,7 +31,10 @@ const AdminPanel = () => {
                 isloading ? (<SplashScreen />):
             <ul className="space-y-4">
                 
-                {documents.map((doc, index) => (
+               {
+                            documents.length === 0 ? (<p>No documents found.</p>):
+               
+               (documents.map((doc, index) => (
                     <li key={doc._id} className={`p-6 rounded-lg break-words shadow-md ${bgColors[index % bgColors.length]}`}>
                         <span className='text-gray-900 border-black border-2 rounded-full px-3 py-1'>{index + 1}</span>                        
                         <h2 className="text-2xl mt-2 font-semibold"> {doc.name}</h2>
@@ -39,8 +42,15 @@ const AdminPanel = () => {
                         <p className="text-lg "> <b>Message:</b> {doc.message}</p>
                         
                     </li>
-                ))}
+                )))
+                
+                
+                
+                
+                }
             </ul>}
+
+            
         </div>
     );
 };
