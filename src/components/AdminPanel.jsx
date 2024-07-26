@@ -10,7 +10,7 @@ const AdminPanel = () => {
 
 const handleDelete = async (docID) => {
  setId(docID)
-    const url = `http://localhost:3000/delete?id=${docID}`;
+    const url = `https://portfolio-backend-git-main-salimkhandevs-projects.vercel.app/delete?id=${docID}`;
     await axios.delete(url);
 
     setDocuments(documents.filter(doc => doc._id != docID));
