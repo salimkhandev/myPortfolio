@@ -22,13 +22,7 @@ const AdminPanel = () => {
                 try {
                     await axios.delete(url);
                     setDocuments(documents.filter(doc => doc._id !== docID));
-                    swal.fire({
-                        title: "Deleted!",
-                        text: "The user has been deleted.",
-                        icon: "success",
-                        timer: 2000,
-                        showConfirmButton: false
-                    });
+                
                 } catch (error) {
                     console.error("There was an error deleting the document:", error);
                     swal.fire({
@@ -91,14 +85,19 @@ const AdminPanel = () => {
 
     return (
         <div className="min-h-screen p-10 text-white submitted-forms bg-gray-900">
-            <Button variant="contained" className='float-right' onClick={deleteAllDocuments}>Delete all recods</Button>
+           <div className='mb-10'>
+                {documents.length === 0 ? null: <Button variant="contained" className='float-right bg-red-700' style={{ backgroundColor: '#b91c1c', color: 'white', float: 'right' }} // Tailwind's bg-red-700 equivalent
+ onClick={deleteAllDocuments}>Delete all recods</Button>}
+            
+            </div> 
+
             <h1 className="text-3xl font-bold mb-6">Submitted Forms</h1>
             {
                 isloading ? (<SplashScreen />):
             <ul className="space-y-4">
                 
                {
-                            documents.length === 0 ? (<p>No documents found.</p>):
+ documents.length === 0 ? (<p>No documents found.</p>):
                
                (documents.map((doc, index) => (
                     <li key={doc._id} className={`p-6 rounded-lg break-words shadow-md ${bgColors[index % bgColors.length]}`}>
