@@ -1,24 +1,83 @@
 import { useState, useEffect } from 'react';
 import SplashScreen from './SplashScreen';
 import axios from 'axios';
-
+import Button from '@mui/material/Button';
+import swal from 'sweetalert2';
 
 const AdminPanel = () => {
     const [documents, setDocuments] = useState([]);
-    const [id, setId] = useState([]);
     const [isloading, setLoading] = useState(true);
 
-const handleDelete = async (docID) => {
- setId(docID)
-    const url = `https://portfolio-backend-git-main-salimkhandevs-projects.vercel.app/delete?id=${docID}`;
-    await axios.delete(url);
+    const handleDelete = async (docID) => {
+        const url = `https://portfolio-backend-git-main-salimkhandevs-projects.vercel.app/delete?id=${docID}`;
+        swal.fire({
+            title: "Are you sure?",
+            text: "You want to delete this user?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Yes, delete it!",
+            cancelButtonText: "No, keep it",
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                try {
+                    await axios.delete(url);
+                    setDocuments(documents.filter(doc => doc._id !== docID));
+                    swal.fire({
+                        title: "Deleted!",
+                        text: "The user has been deleted.",
+                        icon: "success",
+                        timer: 2000,
+                        showConfirmButton: false
+                    });
+                } catch (error) {
+                    console.error("There was an error deleting the document:", error);
+                    swal.fire({
+                        title: "Error!",
+                        text: "There was an error deleting the document.",
+                        icon: "error",
+                        timer: 2000,
+                        showConfirmButton: false
+                    });
+                }
+            }
+        });
+    };
 
-    setDocuments(documents.filter(doc => doc._id != docID));
+    const deleteAllDocuments = async () => {
+        const API_URL = `https://portfolio-backend-git-main-salimkhandevs-projects.vercel.app/delete`;
+        swal.fire({
+            title: "Are you sure?",
+            text: "You want to delete all data?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Yes, delete them!",
+            cancelButtonText: "No, keep them",
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                try {
+                    await axios.delete(`${API_URL}/all`);
+                    swal.fire({
+                        title: "Done!",
+                        text: "All data are deleted",
+                        icon: "success",
+                        timer: 2000,
+                        showConfirmButton: false
+                    });
+                    setDocuments([]);
+                } catch (error) {
+                    console.error("There was an error deleting the documents:", error);
+                    swal.fire({
+                        title: "Error!",
+                        text: "There was an error deleting the documents.",
+                        icon: "error",
+                        timer: 2000,
+                        showConfirmButton: false
+                    });
+                }
+            }
+        });
+    };
 
-}
-    // const path = window.location.pathname;
-
-  
     useEffect(() => {
         fetch('https://portfolio-backend-git-main-salimkhandevs-projects.vercel.app/admin') // Ensure this URL matches your backend endpoint
             .then(response => response.json())
@@ -32,6 +91,7 @@ const handleDelete = async (docID) => {
 
     return (
         <div className="min-h-screen p-10 text-white submitted-forms bg-gray-900">
+            <Button variant="contained" className='float-right' onClick={deleteAllDocuments}>Delete all recods</Button>
             <h1 className="text-3xl font-bold mb-6">Submitted Forms</h1>
             {
                 isloading ? (<SplashScreen />):
@@ -47,7 +107,6 @@ const handleDelete = async (docID) => {
                         <p className="text-lg "><b>Email:</b> {doc.email}</p>
                         <p className="text-lg "> <b>Message:</b> {doc.message}</p>
                        <button className='bg-red-900 hover:bg-red-500  text-white font-bold py-2 px-2 rounded' onClick={()=>{handleDelete(doc._id)}}>Delete</button>
-                        
                     </li>
                 )))
                 
