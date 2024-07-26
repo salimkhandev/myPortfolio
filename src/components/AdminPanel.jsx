@@ -1,18 +1,24 @@
 import { useState, useEffect } from 'react';
 import SplashScreen from './SplashScreen';
+import axios from 'axios';
 
 
 const AdminPanel = () => {
     const [documents, setDocuments] = useState([]);
+    const [id, setId] = useState([]);
     const [isloading, setLoading] = useState(true);
 
+const handleDelete = async (docID) => {
+ setId(docID)
+    const url = `http://localhost:3000/delete?id=${docID}`;
+    await axios.delete(url);
 
+    setDocuments(documents.filter(doc => doc._id != docID));
+
+}
     // const path = window.location.pathname;
 
   
-
-
-
     useEffect(() => {
         fetch('https://portfolio-backend-git-main-salimkhandevs-projects.vercel.app/admin') // Ensure this URL matches your backend endpoint
             .then(response => response.json())
@@ -40,6 +46,7 @@ const AdminPanel = () => {
                         <h2 className="text-2xl mt-2 font-semibold"> {doc.name}</h2>
                         <p className="text-lg "><b>Email:</b> {doc.email}</p>
                         <p className="text-lg "> <b>Message:</b> {doc.message}</p>
+                       <button className='bg-red-900 hover:bg-red-500  text-white font-bold py-2 px-2 rounded' onClick={()=>{handleDelete(doc._id)}}>Delete</button>
                         
                     </li>
                 )))

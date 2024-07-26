@@ -3,38 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Background Colors Example</title>
-    <style>
-        .bg-red { background-color: red; }
-        .bg-blue { background-color: blue; }
-        .bg-green { background-color: green; }
-        .bg-yellow { background-color: yellow; }
-        .item { padding: 10px; margin: 5px; color: white; }
-    </style>
+    <title>Promise on Button Click</title>
 </head>
 <body>
-    <ul id="itemsList"></ul>
+    <button id="myButton">Click Me</button>
+    <p id="status"></p>
 
     <script>
-        const items = [
-            { id: 1, name: 'Item 1' },
-            { id: 2, name: 'Item 2' },
-            { id: 3, name: 'Item 3' },
-            { id: 4, name: 'Item 4' },
-            { id: 5, name: 'Item 5' },
-            { id: 6, name: 'Item 5' },
-            { id: 7, name: 'Item 5' },
-        ];
+        // Function that returns a promise
+        function waitForButtonClick() {
+            return new Promise((resolve) => {
+                // Get the button element
+                const button = document.getElementById('myButton');
+                
+                // Set up a click event listener that resolves the promise
+                button.addEventListener('click', () => {
+                    resolve('Button was clicked!');
+                });
+            });
+        }
 
-        const bgColors = ['bg-red', 'bg-blue', 'bg-green', 'bg-yellow'];
-
-        const itemsList = document.getElementById('itemsList');
-
-        items.forEach((item, index) => {
-            const listItem = document.createElement('li');
-            listItem.className = `item ${bgColors[index %bgColors.length]}`;
-            listItem.textContent = item.name;
-            itemsList.appendChild(listItem);
+        // Use the promise
+        waitForButtonClick().then((message) => {
+            // Update the status paragraph when the promise is resolved
+            document.getElementById('status').innerText = message;
         });
     </script>
 </body>
