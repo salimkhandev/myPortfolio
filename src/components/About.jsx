@@ -39,7 +39,7 @@ const About = () => {
               <div className="skill-bar-fill" style={{ width: '80%' }}></div>
             </div>
             <div className="skill">
-              <span>SQL</span>
+              <span>MySQL</span>
               <div className="skill-bar-fill" style={{ width: '70%' }}></div>
             </div>
             <div className="skill">
