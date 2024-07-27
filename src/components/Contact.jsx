@@ -64,7 +64,7 @@ const Contact = () => {
                     backgroundColor: 'rgba(0,0 ,0 ,0.5)', backdropFilter: 'blur(10px)', // Adjust the blur intensity
                     WebkitBackdropFilter: 'blur(10px)',
                 }}>
-                <h2 className="text-3xl font-bold black-ops-one-regular text-white text-center">Contact Me</h2>
+                <h2 className="text-3xl font-bold black-ops-one-regular text-white text-center ">Contact Me</h2>
                 <Formik
                     initialValues={{ name: '', email: '', message: '' }}
                     validate={values => {
