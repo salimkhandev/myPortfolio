@@ -15,6 +15,12 @@ const Projects = () => {
         "A simple and efficient to-do app that saves your tasks on your device. It automatically matches your device's dark or light mode for a comfortable viewing experience.",
       link: "https://salimnote.vercel.app/",
     },
+    {
+      title: "Background Remover",
+      description:
+        "A powerful tool to remove backgrounds from images effortlessly. Built with React, it provides a user-friendly interface for uploading images and downloading the processed results with transparent backgrounds.",
+      link: "https://backgroundremover-eta.vercel.app/",
+    },
   ];
 
   return (
