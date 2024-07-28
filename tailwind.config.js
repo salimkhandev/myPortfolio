@@ -7,8 +7,7 @@ export default {
   theme: {
     extend: {
       screens: {
-        'a70': '412px',
-      },
+   'max-a70': {'max': '418px'},      },
       animation: {
         bounce: 'bounce 4s infinite',
       },

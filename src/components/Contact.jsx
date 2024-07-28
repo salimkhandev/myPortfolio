@@ -61,7 +61,7 @@ console.log(recaptchaRef.current,'❤️');
             className="min-h-screen flex items-center justify-center relative bg-black bg-opacity-70"
         >
           
-            <div className="relative z-10  p-6 w-[904px] rounded-lg border border-gray-600  rounded-md shadow-lg"
+            <div className="relative z-10  p-6 w-[904px] a70 border border-gray-600  rounded-md shadow-lg"
                 style={{
                     backgroundColor: 'rgba(0,0 ,0 ,0.5)', backdropFilter: 'blur(10px)', // Adjust the blur intensity
                     WebkitBackdropFilter: 'blur(10px)',

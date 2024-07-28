@@ -6,7 +6,7 @@ const About = () => {
       id="about"
       className="min-h-screen flex text-white justify-center bg-black bg-opacity-70 py-16"
     >
-      <div className="max-w-4xl px-6 text-center  border border-gray-600  rounded-md"
+      <div className="max-w-4xl px-6 text-center a70 border border-gray-600  rounded-md"
         style={{
           backgroundColor: 'rgba(0, 0, 0, 0.5)',
           backdropFilter: 'blur(10px)',
