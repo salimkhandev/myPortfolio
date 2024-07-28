@@ -75,7 +75,7 @@ const About = () => {
 
 
           <h3 className="text-2xl font-semibold mt-6">Interests</h3>
-          <p className="text-lg leading-relaxed pb-12">
+          <p className="text-lg leading-relaxed text-red-500 pb-12">
             When I'm not coding, I love hiking, photography, and exploring new places.
           </p>
 
