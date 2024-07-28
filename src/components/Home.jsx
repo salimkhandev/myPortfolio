@@ -3,18 +3,13 @@ import "animate.css"
 
 const Home = () => {
   const strings = [
-    "<span class='highlight'>I'm</span> a Web Developer",
-    "<span class='highlight'>I'm</span> a UI/UX Developer",
-    "<span class='highlight'>I'm</span> a Backend Developer",
-    "<span class='highlight'>I'm</span> a Tester"
+    "<span class='highlight'>I'm</span> a frontend developer",
+    "<span class='highlight'>I'm</span> a backend developer",
+    "<span class='highlight'>I'm</span> a UI/UX designer",
+    "<span class='highlight'>I'm</span> a tester"
   ]
   return (
-    <div 
-    
-
-       className="py-20 text-white bg-black bg-opacity-70"
-    >   
-  
+    <div className="py-20 text-white bg-black bg-opacity-70">   
          <section
         id="home"
         className="min-h-screen flex items-center justify-center"

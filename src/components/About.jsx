@@ -6,7 +6,7 @@ const About = () => {
       id="about"
       className="min-h-screen flex text-white justify-center bg-black bg-opacity-70 py-16"
     >
-      <div className="max-w-4xl px-6 text-center"
+      <div className="max-w-4xl px-6 text-center  border border-gray-600  rounded-md"
         style={{
           backgroundColor: 'rgba(0, 0, 0, 0.5)',
           backdropFilter: 'blur(10px)',
@@ -54,6 +54,10 @@ const About = () => {
               <span>Git</span>
               <div className="skill-bar-fill" style={{ width: '85%' }}></div>
             </div>
+            <div className="skill">
+              <span>Cypress</span>
+              <div className="skill-bar-fill" style={{ width: '60%' }}></div>
+            </div>
             <h4 className="text-xl font-semibold mt-6 text-yellow-400">Currently Learning:</h4>
             <p className="text-lg leading-relaxed">
               I'm constantly expanding my skill set and currently learning about:
@@ -71,13 +75,10 @@ const About = () => {
 
 
           <h3 className="text-2xl font-semibold mt-6">Interests</h3>
-          <p className="text-lg leading-relaxed">
+          <p className="text-lg leading-relaxed pb-12">
             When I'm not coding, I love hiking, photography, and exploring new places.
           </p>
-          <h3 className="text-2xl font-semibold mt-6">Get in Touch</h3>
-          <p className="text-lg leading-relaxed">
-            I'm always open to discussing new opportunities or collaborations. Feel free to reach out to me at <a href="salimeg30@gmail.com" className="text-yellow-400 underline">salimeg30@gmail.com</a> or connect with me on <a href="https://linkedin.com/in/yourprofile" className="text-yellow-400 underline">LinkedIn</a>.
-          </p>
+
         </div>
       </div>
     </section>

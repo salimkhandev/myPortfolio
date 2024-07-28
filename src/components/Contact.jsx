@@ -1,31 +1,29 @@
-import { useState } from 'react';
+import { useState,useRef } from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import ReCAPTCHA from 'react-google-recaptcha';
 import axios from 'axios';
 import Snackbar from "@mui/material/Snackbar";
+import { faWhatsapp, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Contact = () => {
     const [recaptchaValue, setRecaptchaValue] = useState('');
     const [snackbar, setSnackbar] = useState({ open: false, message: "" });
+    const recaptchaRef = useRef();
 
     const handleRecaptchaChange = (value) => {
         setRecaptchaValue(value);
     };
 
-    const handleSubmit = async (values, { setSubmitting }) => {
+    const handleSubmit = async (values, { setSubmitting ,resetForm }) => {
         if (!recaptchaValue) {
             alert("Please complete the reCAPTCHA.");
+console.log(recaptchaRef.current,'❤️');
             setSubmitting(false);
             return;
         }
 
-        // console.log("the the token is",recaptchaValue);
-        // Form submission logic here
-        // alert(`Form submitted with values: ${JSON.stringify(values, null, 2)}`);/
-
-        // Example of how to submit the form data
-        // You can use fetch or axios to send form data to your server
         try {
             const response = await axios.post('https://portfolio-backend-git-main-salimkhandevs-projects.vercel.app/submit-form', {
                 ...values,
@@ -36,8 +34,12 @@ const Contact = () => {
                 },
             });
 
-            // Handle the response data
+            resetForm();
+            // setRecaptchaValue('');
+            recaptchaRef.current.reset();
+
             console.log('Success:', response.data);
+            
         } catch (error) {
             // Handle any errors
             console.error('Error:', error);
@@ -58,14 +60,27 @@ const Contact = () => {
             id="contact"
             className="min-h-screen flex items-center justify-center relative bg-black bg-opacity-70"
         >
-            <div className="absolute"></div>
-            <div className="relative z-10  p-6 w-[904px] rounded-lg shadow-lg"
+          
+            <div className="relative z-10  p-6 w-[904px] rounded-lg border border-gray-600  rounded-md shadow-lg"
                 style={{
                     backgroundColor: 'rgba(0,0 ,0 ,0.5)', backdropFilter: 'blur(10px)', // Adjust the blur intensity
                     WebkitBackdropFilter: 'blur(10px)',
                 }}>
-                <h2 className="text-3xl font-bold black-ops-one-regular text-white text-center ">Contact Me</h2>
+                <h3 className="text-2xl font-semibold text-white black-ops-one-regular mt-6">Get in Touch</h3>
+                <div className="flex space-x-4 my-4">
+                    <a href="https://wa.me/03201970649" target="_blank" rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={faWhatsapp} className="text-2xl text-green-500 hover:text-green-400 transition duration-300" />
+                    </a>
+                    <a href="http://github.com/salimkhandev" target="_blank" rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={faGithub} className="text-2xl text-white hover:text-gray-400 transition duration-300" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/salim-khan-969492256" target="_blank" rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={faLinkedin} className="text-2xl text-blue-600 hover:text-blue-500 transition duration-300" />
+                    </a>
+                </div>
+                <h2 className="text-3xl font-bold black-ops-one-regular text-white text-center ">Direct Message Me</h2>
                 <Formik
+                
                     initialValues={{ name: '', email: '', message: '' }}
                     validate={values => {
                         const errors = {};
@@ -87,7 +102,7 @@ const Contact = () => {
                     onSubmit={handleSubmit}
                 >
                     {({ isSubmitting }) => (
-                        <Form className="mt-8 space-y-4">
+                        <Form className="mt-8 space-y-4 ">
                             <div>
                                 <label htmlFor="name" className="block text-sm font-bold text-white">
                                     Name:
@@ -96,7 +111,7 @@ const Contact = () => {
                                     type="text"
                                     id="name"
                                     name="name"
-                                    className="w-full border px-3 py-2 rounded-md"
+                                    className="w-full border px-3 py-2 rounded-md border-gray-600 "
                                 />
                                 <ErrorMessage name="name" component="div" className="text-red-500 text-sm mt-1" />
                             </div>
@@ -128,6 +143,8 @@ const Contact = () => {
                                 <ReCAPTCHA
                                     sitekey="6LfPzhUqAAAAAC7Qz5KXAwdmLlHVE83PtS2uyzXO" // Replace with your site key
                                     onChange={handleRecaptchaChange}
+                                    ref={recaptchaRef}
+
                                 />
                             </div>
                             <div className='w-full  flex justify-center '>

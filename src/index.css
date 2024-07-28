@@ -26,14 +26,14 @@ border-radius: 0 0 25px 25px;
 /* DynamicCaption.css */
 
 .highlight {
-  color: blue;
+  color: rgb(20, 245, 215);
   /* Blue text color */
   font-size: 24px;
   /* Adjusted font size, x-large is approximately 24px */
-  text-shadow:
-    1px 1px 1px #ccc,
+  /* text-shadow: */
+    /* 1px 1px 1px #ccc, */
     /* Light gray inner shadow */
-    0 0 5px #333;
+    /* 0 0 5px #333; */
   /* Darker outer shadow */
 }
 
@@ -133,7 +133,7 @@ body::-webkit-scrollbar {
 
 /* Spinner When the form is submiting */
 .spinner {
-  border: 4px solid rgba(0, 0, 0, 0.1);
+  border: 4px solid rgba(6, 204, 253, 0.74);
   /* Light grey background */
   border-left: 4px solid black;
   /* Black spinner color */
