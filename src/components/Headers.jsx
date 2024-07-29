@@ -7,26 +7,26 @@ const Header = () => {
       <nav className="container mx-auto flex justify-center py-4">
         <ul className="flex a70:space-x-4 a70+:space-x-12">
           <li className="home active">
-            <a href="#home" className="hover:underline svg p-6 a70:p-0 ">
+            <a href="#home" className="svg p-6 a70:p-0 ">
               <FontAwesomeIcon icon={faHome} className="mr-2  a70:inline smaller:hidden" />
               Home
             </a>
           </li>
           <li className="about">
-            <a href="#about" className="hover:underline  p-6 svg a70:p-0">
+            <a href="#about" className="p-6 svg a70:p-0">
               <FontAwesomeIcon icon={faInfoCircle} className="mr-2 smaller:hidden a70:inline" />
 
               About
             </a>
           </li>
           <li className="projects">
-            <a href="#projects" className="hover:underline svg p-6 a70:p-0">
+            <a href="#projects" className=" svg p-6 a70:p-0">
               <FontAwesomeIcon icon={faInbox} className="mr-2 a70:inline smaller:hidden" />
               Projects
             </a>
           </li>
           <li className="contact">
-            <a href="#contact" className="hover:underline svg p-6 a70:p-0">
+            <a href="#contact" className=" svg p-6 a70:p-0">
               <FontAwesomeIcon icon={faUser} className="mr-2  a70:inline smaller:hidden" />
               Contact
             </a>
