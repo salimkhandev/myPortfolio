@@ -28,7 +28,7 @@ const Projects = () => {
       id="projects"
       className="min-h-screen  text-white flex items-center justify-center bg-black bg-opacity-70 "
     >
-      <div className="max-w-4xl border border-gray-600  a70 rounded-md" 
+      <div className="max-w-4xl border border-gray-600  a70 rounded-md " 
         style={{
           backgroundColor: 'rgba(0,0 ,0 ,0.5)', backdropFilter: 'blur(10px)', // Adjust the blur intensity
           WebkitBackdropFilter: 'blur(10px)'

@@ -1,8 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Ga+Maamli&display=swap');@tailwind base;
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Ga+Maamli&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 html {
   scroll-behavior: smooth;
+}
+.roboto-slab {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
+  font-style: normal;
 }
 .black-ops-one-regular {
   font-family: "Black Ops One", system-ui;
@@ -17,11 +24,12 @@ border-radius: 0 0 25px 25px;
 }
 
 .active {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgb(18, 9, 95);
     border-radius: 5px;
     padding-top: 3px;
     padding-bottom: 3px;
   min-width: 90px;
+  
 }
 /* DynamicCaption.css */
 
@@ -133,7 +141,7 @@ body::-webkit-scrollbar {
 
 /* Spinner When the form is submiting */
 .spinner {
-  border: 4px solid rgba(6, 204, 253, 0.74);
+  border: 4px solid rgb(253, 248, 253);
   /* Light grey background */
   border-left: 4px solid black;
   /* Black spinner color */
@@ -174,4 +182,5 @@ body {
     /* Add your styles here */
     width:368px
   }
+
 }

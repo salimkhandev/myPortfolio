@@ -5,29 +5,29 @@ const Header = () => {
   return (
     <header className="fixed w-full text-white top-0 z-50 bg-black py-1 px-4  text-center transition-all duration-300 " >
       <nav className="container mx-auto flex justify-center py-4">
-        <ul className="flex a70:space-x-4 space-x-8">
+        <ul className="flex a70:space-x-4 a70+:space-x-12">
           <li className="home active">
             <a href="#home" className="hover:underline svg p-6 a70:p-0 ">
-              <FontAwesomeIcon icon={faHome} className="mr-2" />
+              <FontAwesomeIcon icon={faHome} className="mr-2 smaller:hidden" />
               Home
             </a>
           </li>
           <li className="about">
             <a href="#about" className="hover:underline  p-6 svg a70:p-0">
-<FontAwesomeIcon icon={faInfoCircle}  className="mr-2" />
+<FontAwesomeIcon icon={faInfoCircle}  className="mr-2 smaller:hidden " />
 
               About
             </a>
           </li>
           <li className="projects">
             <a href="#projects" className="hover:underline svg p-6 a70:p-0">
-              <FontAwesomeIcon icon={faInbox} className="mr-2" />
+              <FontAwesomeIcon icon={faInbox} className="mr-2 smaller:hidden" />
               Projects
             </a>
           </li>
           <li className="contact">
             <a href="#contact" className="hover:underline svg p-6 a70:p-0">
-              <FontAwesomeIcon icon={faUser} className="mr-2" />
+              <FontAwesomeIcon icon={faUser} className="mr-2 smaller:hidden" />
               Contact
             </a>
           </li>

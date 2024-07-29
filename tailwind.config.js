@@ -8,6 +8,8 @@ export default {
     extend: {
       screens: {
         'a70': '412px',
+        'a70+': '1200px',
+        'smaller': '342px',
       },
       animation: {
         bounce: 'bounce 4s infinite',

@@ -13,15 +13,14 @@ const About = () => {
           WebkitBackdropFilter: 'blur(10px)'
         }}
       >
-        <h2 className="text-4xl font-extrabold mb-6 black-ops-one-regular transition-colors duration-300 ease-in-out hover:text-gray-500">About Me</h2>
+        <h2 className="text-4xl font-extrabold mb-6 black-ops-one-regular transition-colors pt-4 duration-300 ease-in-out hover:text-gray-500">About Me</h2>
         <div className="space-y-6">
           <p className="text-lg leading-relaxed">
-            Hi, I'm <span className="text-yellow-400">Salim Khan</span>, a dedicated Software Engineering undergraduate student at Islamia College University Peshawar. With a passion for web development, I specialize in creating dynamic and responsive web applications.
+            Hi, I'm Salim Khan, a dedicated Software Engineering undergraduate student at Islamia College University Peshawar. With a passion for web development, I specialize in creating dynamic and responsive web applications.
           </p>
 
-          <h3 className="text-2xl font-semibold mt-6">Skills</h3>
+          <h3 className="text-2xl font-semibold text-blue-900 mt-6">Technical Skills</h3>
           <div className="skill-bar">
-            <p className="text-lg leading-relaxed font-bold">Technical:</p>
             <div className="skill">
               <span>JavaScript</span>
               <div className="skill-bar-fill" style={{ width: '90%' }}></div>
@@ -58,7 +57,6 @@ const About = () => {
               <span>Cypress</span>
               <div className="skill-bar-fill" style={{ width: '60%' }}></div>
             </div>
-            <h4 className="text-xl font-semibold mt-6 text-yellow-400">Currently Learning:</h4>
             <p className="text-lg leading-relaxed">
               I'm constantly expanding my skill set and currently learning about:
             </p>
@@ -70,14 +68,13 @@ const About = () => {
             </ul>
           </div>
           <p className="text-lg leading-relaxed">
-            <span className="font-bold">Soft Skills:</span> Team collaboration, problem-solving, agile methodologies
+            <h1 className="font-bold text-blue-900 text-2xl">Soft Skills:</h1> Team collaboration, problem-solving, agile methodologies
           </p>
 
-
-          <h3 className="text-2xl font-semibold mt-6">Interests</h3>
-          <p className="text-lg leading-relaxed pb-12">
+<div><h3 className="text-2xl font-semibold text-blue-900">Interests</h3>
+          <p className="text-lg leading-relaxed  pb-12">
             When I'm not coding, I love hiking, photography, and exploring new places.
-          </p>
+          </p></div>
 
         </div>
       </div>

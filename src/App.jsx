@@ -37,11 +37,9 @@ function App() {
 
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
-        console.log('Section Top:', sectionTop);
         if (window.scrollY >= sectionTop - 150) {
           current = section.getAttribute("id");
 
-          console.log('current:', current);
         }
       });
 

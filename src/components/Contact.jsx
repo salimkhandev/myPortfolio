@@ -111,7 +111,7 @@ console.log(recaptchaRef.current,'❤️');
                                     type="text"
                                     id="name"
                                     name="name"
-                                    className="w-full border px-3 py-2 rounded-md border-gray-600 "
+                                    className="w-full border text-white px-3 py-2 rounded-md bg-transparent  "
                                 />
                                 <ErrorMessage name="name" component="div" className="text-red-500 text-sm mt-1" />
                             </div>
@@ -123,7 +123,7 @@ console.log(recaptchaRef.current,'❤️');
                                     type="email"
                                     id="email"
                                     name="email"
-                                    className="w-full border px-3 py-2 rounded-md"
+                                    className="w-full text-white  bg-transparent border px-3 py-2 rounded-md"
                                 />
                                 <ErrorMessage name="email" component="div" className="text-red-500 text-sm mt-1" />
                             </div>
@@ -135,17 +135,20 @@ console.log(recaptchaRef.current,'❤️');
                                     as="textarea"
                                     id="message"
                                     name="message"
-                                    className="w-full border px-3 py-2 rounded-md"
+                                    className="w-full border text-white  bg-transparent px-3 py-2 rounded-md"
                                 />
                                 <ErrorMessage name="message" component="div" className="text-red-500 text-sm mt-1" />
                             </div>
-                            <div className="mt-4">
+                            <div className="mt-4" >
+
                                 <ReCAPTCHA
                                     sitekey="6LfPzhUqAAAAAC7Qz5KXAwdmLlHVE83PtS2uyzXO" // Replace with your site key
                                     onChange={handleRecaptchaChange}
                                     ref={recaptchaRef}
+                                    
 
                                 />
+                        
                             </div>
                             <div className='w-full  flex justify-center '>
 
@@ -153,10 +156,10 @@ console.log(recaptchaRef.current,'❤️');
                             
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="bg-gray-700 hover:bg-gray-800  text-white font-bold py-2 px-4 rounded"
+                                    className="bg-blue-900 hover:bg-blue-500  text-white font-bold py-2 px-4 rounded"
                             >
                                 {isSubmitting ? ( 
-                                    <div className="flex place-content-center items-center">
+                                    <div className="flex place-content-center text-blue-900 items-center">
                                         <div className="spinner"></div>
                                     </div>
                                 ) : (
