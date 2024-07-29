@@ -24,7 +24,7 @@ const Projects = () => {
     {
       title: "Tic Tac Toe Game",
       description:
-        "An interactive Tic Tac Toe game built with React and styled using Tailwind CSS. It features animations and an engaging user interface to improve programming logic and enhance the user experience.",
+        "An interactive Tic Tac Toe game built with React and styled using Tailwind CSS. the purpose was to improve my programming logic.",
       link: "https://tic-tac-toe-game-tawny-five.vercel.app", 
     },
   ];
