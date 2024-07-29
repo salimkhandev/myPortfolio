@@ -180,7 +180,11 @@ body {
 @media (min-width: 340px) and (max-width: 418px) {
   .a70 {
     /* Add your styles here */
-    width:368px
+    width:382px
   }
+<<<<<<< HEAD
 
 }
+=======
+}
+>>>>>>> 2cea1d75fc32950d279a25a85323948013bdce4d
