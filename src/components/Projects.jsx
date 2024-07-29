@@ -21,6 +21,12 @@ const Projects = () => {
         "A powerful tool to remove backgrounds from images effortlessly. Built with React, it provides a user-friendly interface for uploading images and downloading the processed results with transparent backgrounds.",
       link: "https://backgroundremover-eta.vercel.app/",
     },
+    {
+      title: "Tic Tac Toe Game",
+      description:
+        "An interactive Tic Tac Toe game built with React and styled using Tailwind CSS. It features animations and an engaging user interface to improve programming logic and enhance the user experience.",
+      link: "https://tic-tac-toe-game-tawny-five.vercel.app", 
+    },
   ];
 
   return (
