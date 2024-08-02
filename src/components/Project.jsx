@@ -1,4 +1,6 @@
 import PropTypes from "prop-types";
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Project = (props) => {
   return (
@@ -16,6 +18,7 @@ const Project = (props) => {
         className="text-blue-500 hover:underline flex items-center justify-center"
       >
         View Project
+        <FontAwesomeIcon icon={faExternalLinkAlt} style={{ marginLeft: '8px' }} />
       </a>
     </div>
   );
