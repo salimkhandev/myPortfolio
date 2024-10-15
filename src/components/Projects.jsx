@@ -1,7 +1,15 @@
 
 import Project from "./Project";
+import { useEffect } from 'react';
+import 'aos/dist/aos.css'; // Import AOS styles
+import AOS from 'aos';
 
 const Projects = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 800, // Duration of animations
+    });
+  }, []);
   const projectList = [
     {
       title: "Secure Login Page for Facebook Users",
@@ -44,7 +52,7 @@ const Projects = () => {
         
         
         >Projects</h2>
-        <div className="mt-10" >
+        <div className="mt-10" data-aos="zoom-in" data-aos-delay="100"  >
           {projectList.map((proj, index) => (
             <Project
               key={index}

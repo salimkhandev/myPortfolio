@@ -7,7 +7,17 @@ import { faWhatsapp, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-i
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import { useEffect } from 'react';
+import 'aos/dist/aos.css'; // Import AOS styles
+import AOS from 'aos';
+
+
 const Contact = () => {
+    useEffect(() => {
+        AOS.init({
+            duration: 800, // Duration of animations
+        });
+    }, []);
     const [recaptchaValue, setRecaptchaValue] = useState('');
     const [snackbar, setSnackbar] = useState({ open: false, message: "" });
     const recaptchaRef = useRef();
@@ -67,7 +77,7 @@ console.log(recaptchaRef.current,'❤️');
                     WebkitBackdropFilter: 'blur(10px)',
                 }}>
                 <h3 className="text-2xl font-semibold text-white black-ops-one-regular mt-6">Get in Touch</h3>
-                <div className="flex space-x-4 my-4">
+                <div data-aos="fade-up" className="flex space-x-4 my-4">
                     <a href="https://wa.me/923201970649" target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon icon={faWhatsapp} className="text-2xl text-green-500 hover:text-green-400 transition duration-300" />
                     </a>
@@ -78,7 +88,7 @@ console.log(recaptchaRef.current,'❤️');
                         <FontAwesomeIcon icon={faLinkedin} className="text-2xl text-blue-600 hover:text-blue-500 transition duration-300" />
                     </a>
                 </div>
-                <h2 className="text-3xl font-bold black-ops-one-regular text-white text-center ">Direct Message Me</h2>
+                <h2 data-aos="fade-in" className="text-3xl font-bold black-ops-one-regular text-white text-center ">Direct Contact Me</h2>
                 <Formik
                 
                     initialValues={{ name: '', email: '', message: '' }}
@@ -102,7 +112,7 @@ console.log(recaptchaRef.current,'❤️');
                     onSubmit={handleSubmit}
                 >
                     {({ isSubmitting }) => (
-                        <Form className="mt-8 space-y-4 ">
+                        <Form data-aos="fade-in" data-aos-delay="200" className="mt-8 space-y-4 ">
                             <div>
                                 <label htmlFor="name" className="block text-sm font-bold text-white">
                                     Name:
