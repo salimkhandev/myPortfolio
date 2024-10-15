@@ -11,7 +11,6 @@ const About = () => {
   return (
     <section 
       id="about"
-  
       
       className="min-h-screen  flex text-white justify-center bg-black bg-opacity-70 py-16"
     >
@@ -24,7 +23,7 @@ const About = () => {
       >
         <h2 className="text-4xl font-extrabold mb-6 black-ops-one-regular transition-colors pt-4 duration-300 ease-in-out hover:text-gray-500">About Me</h2>
         <div className="space-y-6">
-          <p data-aos="fade-left" className="text-lg leading-relaxed">
+          <p className="text-lg leading-relaxed">
             Hi, I'm Salim Khan, a dedicated Software Engineering undergraduate student at Islamia College University Peshawar. With a passion for web development, I specialize in creating dynamic and responsive web applications.
           </p>
 
