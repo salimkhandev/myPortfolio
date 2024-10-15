@@ -34,7 +34,11 @@ const About = () => {
               <div className="skill-bar-fill" style={{ width: '90%' }}></div>
             </div>
             <div className="skill">
-              <span>React</span>
+              <span>ReactJS</span>
+              <div className="skill-bar-fill" style={{ width: '85%' }}></div>
+            </div>
+            <div className="skill">
+              <span>NextJS</span>
               <div className="skill-bar-fill" style={{ width: '85%' }}></div>
             </div>
             <div className="skill">

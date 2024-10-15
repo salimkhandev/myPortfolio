@@ -12,12 +12,6 @@ const Projects = () => {
   }, []);
   const projectList = [
     {
-      title: "Secure Login Page for Facebook Users",
-      description:
-        "A secure login page designed for Facebook users to access their accounts. User data is stored securely to ensure privacy and convenience.",
-      link: "https://login-rose-eight.vercel.app/",
-    },
-    {
       title: "TaskTame",
       description:
         "A simple and efficient to-do app that saves your tasks on your device. It automatically matches your device's dark or light mode for a comfortable viewing experience.",
