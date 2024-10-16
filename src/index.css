@@ -178,4 +178,10 @@ body {
     /* Add your styles here */
     width:382px
   }
+    .skills {
+      /*style the text*/
+      width: 335px;
+      margin: 60px auto;
+      color: #fff;
+    }
 }

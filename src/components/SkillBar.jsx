@@ -8,7 +8,7 @@ const Skills = () => {
                 <li>
                     <h3 className="text-lg font-bold">HTML</h3>
                     <div className="bar bg-gray-700 h-1 rounded-lg  overflow-hidden">
-                        <span className="block bg-blue-500 h css" style={{ width: "93%" }}></span>
+                        <span className="block bg-blue-500 h-full css" style={{ width: "93%" }}></span>
                     </div>
                 </li>
                 <li>
