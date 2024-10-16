@@ -4,66 +4,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AOS Example</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
+    <title>Skills</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f4f4f4;
+        /* Custom animations */
+        @keyframes html {
+            0% {
+                width: 0%;
+            }
+
+            100% {
+                width: 80%;
+            }
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+        @keyframes css {
+            0% {
+                width: 0%;
+            }
+
+            100% {
+                width: 93%;
+            }
         }
 
-        .section {
-            margin: 50px 0;
-            padding: 50px;
-            background: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        @keyframes javascript {
+            0% {
+                width: 0%;
+            }
+
+            100% {
+                width: 50%;
+            }
+        }
+
+        @keyframes jquery {
+            0% {
+                width: 0%;
+            }
+
+            100% {
+                width: 30%;
+            }
+        }
+
+        .html {
+            animation: html 2s;
+        }
+
+        .css {
+            animation: css 2s;
+        }
+
+        .javascript {
+            animation: javascript 2s;
+        }
+
+        .jquery {
+            animation: jquery 2s;
         }
     </style>
 </head>
 
-<body>
+<body class="bg-gray-800 text-white">
 
-    <div class="container">
-        <h1>AOS Example</h1>
-
-        <div class="section" data-aos="fade-up">
-            <h2>Fade Up Animation</h2>
-            <p>This section fades up when you scroll down to it.</p>
-        </div>
-
-        <div class="section" data-aos="fade-right">
-            <h2>Fade Right Animation</h2>
-            <p>This section fades in from the right when you scroll down to it.</p>
-        </div>
-
-        <div class="section" data-aos="zoom-in">
-            <h2>Zoom In Animation</h2>
-            <p>This section zooms in when you scroll down to it.</p>
-        </div>
-
-        <div class="section" data-aos="slide-up">
-            <h2>Slide Up Animation</h2>
-            <p>This section slides up when you scroll down to it.</p>
-        </div>
-
+    <div class="skills max-w-md mx-auto mt-16">
+        <h1 class="text-3xl font-sans text-center">My Skills</h1>
+        <ul class="space-y-5 mt-8">
+            <li>
+                <h3 class="text-lg font-bold">HTML</h3>
+                <div class="bar bg-gray-700 h-2 rounded-lg shadow-md overflow-hidden">
+                    <span class="block bg-blue-500 h-full html" style="width: 80%;"></span>
+                </div>
+            </li>
+            <li>
+                <h3 class="text-lg font-bold">CSS</h3>
+                <div class="bar bg-gray-700 h-2 rounded-lg shadow-md overflow-hidden">
+                    <span class="block bg-blue-500 h-full css" style="width: 93%;"></span>
+                </div>
+            </li>
+            <li>
+                <h3 class="text-lg font-bold">JAVASCRIPT</h3>
+                <div class="bar bg-gray-700 h-2 rounded-lg shadow-md overflow-hidden">
+                    <span class="block bg-blue-500 h-full javascript" style="width: 50%;"></span>
+                </div>
+            </li>
+            <li>
+                <h3 class="text-lg font-bold">JQUERY</h3>
+                <div class="bar bg-gray-700 h-2 rounded-lg shadow-md overflow-hidden">
+                    <span class="block bg-blue-500 h-full jquery" style="width: 30%;"></span>
+                </div>
+            </li>
+        </ul>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
-    <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800, // Animation duration in milliseconds
-        });
-    </script>
 </body>
 
 </html>

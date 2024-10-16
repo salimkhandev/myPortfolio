@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import '../App.css';
 import 'aos/dist/aos.css'; // Import AOS styles
+import SkillBar from '../components/SkillBar'
 import  AOS  from 'aos';
 const About = () => {
   useEffect(() => {
@@ -27,60 +28,12 @@ const About = () => {
             Hi, I'm Salim Khan, a dedicated Software Engineering undergraduate student at Islamia College University Peshawar. With a passion for web development, I specialize in creating dynamic and responsive web applications.
           </p>
 
-          <h3 className="text-2xl font-semibold text-blue-900 mt-6">Technical Skills</h3>
+          <h3 className="text-2xl font-extrabold mb-6 black-ops-one-regular text-blue-500 mt-6">Technical Skills</h3>
           <div data-aos="flip-left" className="skill-bar">
-            <div className="skill">
-              <span>JavaScript</span>
-              <div className="skill-bar-fill" style={{ width: '90%' }}></div>
-            </div>
-            <div className="skill">
-              <span>ReactJS</span>
-              <div className="skill-bar-fill" style={{ width: '85%' }}></div>
-            </div>
-            <div className="skill">
-              <span>NextJS</span>
-              <div className="skill-bar-fill" style={{ width: '85%' }}></div>
-            </div>
-            <div className="skill">
-              <span>Node.js</span>
-              <div className="skill-bar-fill" style={{ width: '80%' }}></div>
-            </div>
-            <div className="skill">
-              <span>MongoDB</span>
-              <div className="skill-bar-fill" style={{ width: '80%' }}></div>
-            </div>
-            <div className="skill">
-              <span>MySQL</span>
-              <div className="skill-bar-fill" style={{ width: '70%' }}></div>
-            </div>
-            <div className="skill">
-              <span>HTML</span>
-              <div className="skill-bar-fill" style={{ width: '95%' }}></div>
-            </div>
-            <div className="skill">
-              <span>CSS</span>
-              <div className="skill-bar-fill" style={{ width: '90%' }}></div>
-            </div>
-            <div className="skill">
-              <span>Git</span>
-              <div className="skill-bar-fill" style={{ width: '85%' }}></div>
-            </div>
-            <div className="skill">
-              <span>Cypress</span>
-              <div className="skill-bar-fill" style={{ width: '60%' }}></div>
-            </div>
-            <p className="text-lg leading-relaxed">
-              I'm constantly expanding my skill set and currently learning about:
-            </p>
-            <ul data-aos="fade-up" data-aos-delay="100" className="list-disc list-inside">
-              <li>TypeScript</li>
-              <li>GraphQL</li>
-              <li>Docker</li>
-              <li>Next.js</li>
-            </ul>
+         <SkillBar/>
           </div>
-          <p className="text-lg leading-relaxed">
-            <h1 className="font-bold text-blue-900 text-2xl">Soft Skills:</h1> Team collaboration, problem-solving, agile methodologies
+          <p data-aos="fade-up" data-aos-delay="200" className="text-lg leading-relaxed">
+            <h1  className="font-bold text-blue-900 text-2xl">Soft Skills:</h1> Team collaboration, problem-solving, agile methodologies
           </p>
 
           <div><h3 data-aos="fade-up" data-aos-delay="200" className="text-2xl font-semibold text-blue-900">Interests</h3>

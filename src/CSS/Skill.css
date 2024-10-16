@@ -1,0 +1,169 @@
+@keyframes html {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 80%;
+    }
+
+    /* Change this to your desired width for HTML */
+}
+
+@keyframes css {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 93%;
+    }
+}
+
+@keyframes javascript {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 50%;
+    }
+}
+
+@keyframes react {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 85%;
+    }
+}
+
+@keyframes nextjs {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 75%;
+    }
+}
+
+@keyframes nodejs {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 80%;
+    }
+}
+
+@keyframes tailwind {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 70%;
+    }
+}
+
+@keyframes mongodb {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 60%;
+    }
+}
+
+@keyframes postgresql {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 65%;
+    }
+}
+
+.html {
+    animation: html 2s forwards;
+    /* Add forwards to keep final width */
+}
+
+.css {
+    animation: css 2s forwards;
+    /* Add forwards to keep final width */
+}
+
+.javascript {
+    animation: javascript 2s forwards;
+    /* Add forwards to keep final width */
+}
+
+.react {
+    animation: react 2s forwards;
+    /* Add forwards to keep final width */
+}
+
+.nextjs {
+    animation: nextjs 2s forwards;
+    /* Add forwards to keep final width */
+}
+
+.nodejs {
+    animation: nodejs 2s forwards;
+    /* Add forwards to keep final width */
+}
+
+.tailwind {
+    animation: tailwind 2s forwards;
+    /* Add forwards to keep final width */
+}
+
+.mongodb {
+    animation: mongodb 2s forwards;
+    /* Add forwards to keep final width */
+}
+
+.postgresql {
+    animation: postgresql 2s forwards;
+    /* Add forwards to keep final width */
+}
+
+.bar {
+    position: relative;
+    width: 100%;
+    background-color: #4a5568;
+    /* bg-gray-700 */
+    border-radius: 0.5rem;
+    /* rounded-lg */
+    overflow: hidden;
+}
+
+.bar span {
+    display: block;
+    height: 100%;
+    transition: width 0.5s ease;
+    /* Smooth transition for width */
+}
+
+.skills {
+    animation: fadeIn 0.5s ease;
+    /* Optional fade-in animation for the whole section */
+}
+
+/* Optional: Animation for the whole skill section */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
