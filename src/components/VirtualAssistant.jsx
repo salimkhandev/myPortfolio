@@ -15,7 +15,7 @@ const VirtualAssistant = () => {
         >
             <div
                 className="min-h-screen flex items-center justify-center py-20 text-white"
-                data-aos="zoom-in"  // AOS animation type
+                data-aos="fade-up"  // AOS animation type
                 data-aos-duration="500"  // Duration of the animation
             >
                 {/* Card Container */}
