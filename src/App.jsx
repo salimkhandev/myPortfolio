@@ -8,7 +8,7 @@ import Projects from './components/Projects';
 import Headers from './components/Headers';
 import AdminPanel from './components/AdminPanel';
 import SplashScreen from './components/SplashScreen';
-
+import VirtualAssistant from './components/VirtualAssistant';
 function App() {
   const [showSplash, setShowSplash] = useState(false);
 
@@ -72,6 +72,7 @@ function App() {
                     <About />
                     <Projects />
                     <Contact />
+                    <VirtualAssistant/>
                   </>
                 } />
               </Routes>

@@ -14,21 +14,23 @@ const Header = () => {
           </li>
           <li className="about">
             <a href="#about" className="p-6 svg a70:p-0">
-              <FontAwesomeIcon icon={faInfoCircle} className="mr-2 smaller:hidden a70:inline" />
 
               About
             </a>
           </li>
           <li className="projects">
             <a href="#projects" className=" svg p-6 a70:p-0">
-              <FontAwesomeIcon icon={faInbox} className="mr-2 a70:inline smaller:hidden" />
               Projects
             </a>
           </li>
           <li className="contact">
             <a href="#contact" className=" svg p-6 a70:p-0">
-              <FontAwesomeIcon icon={faUser} className="mr-2  a70:inline smaller:hidden" />
               Contact
+            </a>
+          </li>
+          <li className="va">
+            <a href="#va" className=" svg p-6 a70:p-0">
+              VA
             </a>
           </li>
         </ul>

@@ -22,7 +22,7 @@
     "aos": "^2.3.4",
     "axios": "^1.7.2",
     "formik": "^2.4.6",
-    "framer-motion": "^11.3.2",
+    "framer-motion": "^11.11.9",
     "mui": "^0.0.1",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
