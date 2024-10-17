@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header className="fixed w-full text-white top-0 z-50 bg-black py-1 px-4 border-b-[3px] border-gray-600 text-center transition-all duration-300 " >
       <nav className="container mx-auto flex justify-center py-4 ">
-        <ul className="flex a70:space-x-4 a70+:space-x-12 " >
+        <ul className="flex a70:space-x-2 a70+:space-x-12 " >
           <li className="home active">
             <a href="#home" className="svg p-6 a70:p-0 ">
               <FontAwesomeIcon icon={faHome} className="mr-2  a70:inline smaller:hidden" />
