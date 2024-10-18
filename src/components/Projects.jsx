@@ -20,8 +20,8 @@ const Projects = () => {
     {
       title: "TaskTame",
       description:
-        "Created a comprehensive school management application utilizing Node.js, React, Material-UI, and Tailwind CSS for a responsive and user-friendly experience.",
-      link: "https://ghss-management.vercel.app",
+        "Task Tame is a React , Tailwind CSS note-taking app with  auto-adapting to dark or light mode, customizable, and storing notes in localStorage",
+      link: "https://salimnote.vercel.app",
     },
     {
       title: "Background Remover",
