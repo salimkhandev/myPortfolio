@@ -14,8 +14,8 @@ const Projects = () => {
    {
       title: "School Management System",
       description:
-        "",
-      link: "https://salimnote.vercel.app/",
+        "Created a comprehensive school management application utilizing Node.js, React, Material-UI, and Tailwind CSS for a responsive and user-friendly experience.",
+      link: "https://ghss-management.vercel.app",
     },
     {
       title: "TaskTame",
