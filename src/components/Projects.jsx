@@ -11,11 +11,17 @@ const Projects = () => {
     });
   }, []);
   const projectList = [
+   {
+      title: "School Management System",
+      description:
+        "",
+      link: "https://salimnote.vercel.app/",
+    },
     {
       title: "TaskTame",
       description:
-        "A simple and efficient to-do app that saves your tasks on your device. It automatically matches your device's dark or light mode for a comfortable viewing experience.",
-      link: "https://salimnote.vercel.app/",
+        "Created a comprehensive school management application utilizing Node.js, React, Material-UI, and Tailwind CSS for a responsive and user-friendly experience.",
+      link: "https://ghss-management.vercel.app",
     },
     {
       title: "Background Remover",
