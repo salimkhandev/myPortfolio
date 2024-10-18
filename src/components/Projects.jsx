@@ -12,7 +12,7 @@ const Projects = () => {
   }, []);
   const projectList = [
    {
-      title: "School Management System",
+      title: "School Management System (Alpha Version)",
       description:
         "Created a comprehensive school management application utilizing Node.js, React, Material-UI, and Tailwind CSS for a responsive and user-friendly experience.",
       link: "https://ghss-management.vercel.app",
