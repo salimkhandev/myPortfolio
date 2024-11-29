@@ -29,6 +29,13 @@ const Projects = () => {
         "A powerful tool to remove backgrounds from images effortlessly. Built with React, it provides a user-friendly interface for uploading images and downloading the processed results with transparent backgrounds.",
       link: "https://backgroundremover-eta.vercel.app/",
     },
+      {
+      title: "SeatGeek",
+      description:
+        "A redesigned version of SeatGeek optimized for PC, offering a streamlined experience tailored for desktop users.",
+      link: "https://seatgreek.vercel.app", 
+    }
+    ,
     {
       title: "Tic Tac Toe Game",
       description:
