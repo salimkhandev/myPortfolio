@@ -27,11 +27,13 @@ const Home = () => {
         >
           
           <img
-         
             src="/profilePic.jpeg"
-            className="h-52 w-52 md:h-48 md:w-48 mx-auto rounded-full mb-6  animate__animated  animate__bounceInUp"
+            className="h-52 w-52 md:h-48 md:w-48 mx-auto rounded-full mb-6 animate__animated animate__bounceInUp shadow-[0_0_20px_5px_rgba(59,130,246,0.5)]"
             alt="this is the logo"
           />
+
+
+
           <h1  className="  text-5xl a70:text-5xl black-ops-one-regular svg transition-colors   hover:text-green-900 font-bold animate__animated animate__backInDown">
             Welcome
           </h1>
