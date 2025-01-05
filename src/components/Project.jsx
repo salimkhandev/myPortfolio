@@ -9,7 +9,7 @@ const Project = (props) => {
       
    
       className=" p-4 text-white mb-4 ">
-      <h3 className="text-2xl font-bold roboto-slab pb-1 ">{props.title}</h3>
+      <h3 className="text-1xl font-bold roboto-slab pb-1 ">{props.title}</h3>
       <p className="text-gray-400">{props.description}</p>
       <a
         href={props.link}
