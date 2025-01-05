@@ -6,9 +6,6 @@
 html {
   scroll-behavior: smooth;
 }
-
-
-
 .roboto-slab {
   font-family: 'Roboto Slab', serif;
   font-weight: 400;
@@ -163,20 +160,23 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-image: url("/protrait.jpeg");
+    
     background-size: cover;
     background-position: center;
+  
     background-repeat: no-repeat;
     background-attachment: fixed;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    /* padding-top: 60px; */
+   
+    overflow-x: hidden;
   }
 }
 
-@media (min-width: 340px) and (max-width: 418px) {
+@media (min-width: 340px) and (max-width: 495px) {
   .a70 {
     /* Add your styles here */
-    width:382px
+    width:382px;
 
 
   }
@@ -184,10 +184,33 @@ body {
 width:350px;
 height: 715px;
   }
+   /* a70:space-x-2 a70+:space-x-12 */
     .skills {
       /*style the text*/
       width: 335px;
       margin: 60px auto;
       color: #fff;
     }
+}
+
+
+@media (min-width:315px) and (max-width:373px) {
+  .size415{
+    width: 300px;
+  }
+  
+}
+@media (min-width:377px) and (max-width:475px) {
+  .size415{
+    width: 400px;
+  }
+  
+}
+
+
+@media (min-width:509px) {
+  .size415{
+    width: 500px;
+  }
+  
 }

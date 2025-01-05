@@ -29,7 +29,7 @@ const VirtualAssistant = () => {
                     <div>
                         <iframe 
                             src="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2024/10/17/11/20241017113347-9HC98NSW.json"
-                            className=" w-[500px] a70va  h-[600px]  border-none rounded-lg"
+                            className=" size415 a70va  h-[600px]  border-none rounded-lg"
                             title="Virtual Assistant"
                         />
                     </div>
