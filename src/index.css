@@ -173,7 +173,7 @@ body {
   }
 }
 
-@media (min-width: 340px) and (max-width: 495px) {
+@media (min-width: 318px) and (max-width: 495px) {
   .a70 {
     /* Add your styles here */
     width:382px;
