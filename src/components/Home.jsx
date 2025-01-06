@@ -37,7 +37,7 @@ const Home = () => {
           <h1  className="  text-5xl a70:text-5xl black-ops-one-regular svg transition-colors   hover:text-green-900 font-bold animate__animated animate__backInDown">
             Welcome
           </h1>
-          <p className="text-2xl md:text-3xl mt-4 ">Salim Khan</p>
+          <p className="text-2xl md:text-3xl mt-4 stylish ">Salim Khan</p>
           <p className="mt-4 text-lg">
             <ReactTyped
               className="  text-white"
