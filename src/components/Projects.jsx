@@ -12,7 +12,7 @@ const Projects = () => {
   }, []);
   const projectList = [
    {
-      title: "School Management System (Alpha Version)",
+      title: "School Management System (beta version)",
       description:
         "Created a comprehensive school management application utilizing Node.js, React, Material-UI, and Tailwind CSS for a responsive and user-friendly experience.",
       link: "https://ghss-management.vercel.app",
@@ -26,14 +26,14 @@ const Projects = () => {
     {
       title: "Background Remover",
       description:
-        "A powerful tool to remove backgrounds from images effortlessly. Built with React, it provides a user-friendly interface for uploading images and downloading the processed results with transparent backgrounds.",
+        "A powerful tool to remove backgrounds from images effortlessly. Built with React",
       link: "https://backgroundremover-eta.vercel.app/",
     },
     {
       title: "SITI Networks UI Clone (Pure HTML/CSS)",
       description:
         "A responsive front-page replica of SITI Networks, built using only HTML & CSS.",
-      link: "siti-networks.vercel.app/",
+      link: "https://siti-networks.vercel.app/",
     },
       {
       title: "SeatGeek",
@@ -42,6 +42,12 @@ const Projects = () => {
       link: "https://seatgreek.vercel.app", 
     }
     ,
+    {
+      title: "Offline Snake Game 🐍 (PWA)",
+      description:
+        "A lightweight, offline-capable Snake game. Install it on your home screen and enjoy playing without the internet!",
+      link: "https://snake-game-pwa.vercel.app", 
+    },
     {
       title: "Tic Tac Toe Game",
       description:
