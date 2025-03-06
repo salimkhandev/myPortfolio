@@ -29,6 +29,12 @@ const Projects = () => {
         "A powerful tool to remove backgrounds from images effortlessly. Built with React, it provides a user-friendly interface for uploading images and downloading the processed results with transparent backgrounds.",
       link: "https://backgroundremover-eta.vercel.app/",
     },
+    {
+      title: "SITI Networks UI Clone (Pure HTML/CSS)",
+      description:
+        "A responsive front-page replica of SITI Networks, built using only HTML & CSS.",
+      link: "siti-networks.vercel.app/",
+    },
       {
       title: "SeatGeek",
       description:
