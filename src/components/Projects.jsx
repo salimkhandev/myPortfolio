@@ -17,6 +17,12 @@ const Projects = () => {
         "Created a comprehensive school management application utilizing Node.js, React, Material-UI, and Tailwind CSS for a responsive and user-friendly experience.",
       link: "https://ghss-management.vercel.app",
     },
+      {
+      title: "Push Notifications",
+      description:
+        "Used Firebase Cloud Messaging (FCM) service to send push notifications to all devices or specific ones from custom UI",
+      link: "https://firebase-fcm2.vercel.app"
+    },
     {
       title: "TaskTame",
       description:
