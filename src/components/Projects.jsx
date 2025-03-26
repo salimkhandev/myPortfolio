@@ -20,7 +20,7 @@ const Projects = () => {
       {
       title: "Push Notifications",
       description:
-        "Used Firebase Cloud Messaging (FCM) service to send push notifications to all devices or specific ones from custom UI",
+        "Used Firebase Cloud Messaging (FCM) service to send in-app and background push notifications to all devices or specific ones from custom UI",
       link: "https://firebase-fcm2.vercel.app"
     },
     {
