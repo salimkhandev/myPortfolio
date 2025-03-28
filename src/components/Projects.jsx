@@ -26,7 +26,7 @@ const Projects = () => {
     {
       title: "TaskTame",
       description:
-        "Task Tame is a React , Tailwind CSS note-taking app with  auto-adapting to dark or light mode, customizable, and storing notes in localStorage",
+        "Task Tame is a React and Tailwind CSS-powered note-taking app that works offline, is installable, auto-adapts to dark or light mode, offers customization options, and stores notes securely in localStorage",
       link: "https://salimnote.vercel.app",
     },
     {
