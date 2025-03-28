@@ -32,14 +32,7 @@ const About = () => {
           <div data-aos="flip-left" className="skill-bar">
          <SkillBar/>
           </div>
-          <p data-aos="fade-up" data-aos-delay="200" className="text-lg leading-relaxed">
-            <h1  className="font-bold text-blue-900 text-2xl">Soft Skills:</h1> Team collaboration, problem-solving, agile methodologies
-          </p>
-
-          <div><h3 data-aos="fade-up" data-aos-delay="200" className="text-2xl font-semibold text-blue-900">Interests</h3>
-            <p data-aos="fade-up" data-aos-delay="200" className="text-lg leading-relaxed  pb-12">
-            When I'm not coding, I love hiking, photography, and exploring new places.
-          </p></div>
+      
 
         </div>
       </div>
