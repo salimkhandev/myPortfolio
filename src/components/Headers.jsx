@@ -35,7 +35,7 @@ const Header = () => {
         {/* Logo */}
         <a href="#home" className="flex items-center group z-50">
           <span className="text-xl font-['Great_Vibes'] bg-gradient-to-r from-[#60A5FA] to-[#93C5FD] bg-clip-text text-transparent">
-<img src="../../public/profilePic.jpg" alt="logo" className="w-10  h-10 rounded-full" />
+<img src="  /profilePic.jpg" alt="logo" className="w-10  h-10 rounded-full" />
           </span>
         </a>
 
