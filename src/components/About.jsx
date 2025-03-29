@@ -46,7 +46,6 @@ const About = () => {
                 Hi, I'm <span className="font-semibold text-blue-400">Salim Khan</span>, 
                 a Software Engineering undergraduate student at 
                 <span className="font-semibold text-purple-400"> Islamia College University Peshawar</span>. 
-                With a passion for web development and creating innovative solutions.
               </p>
               
               <div className="flex flex-wrap gap-4 justify-center py-4">
