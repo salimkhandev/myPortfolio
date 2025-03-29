@@ -1,13 +1,13 @@
-
-import Project from "./Project";
-import { useEffect } from 'react';
-import 'aos/dist/aos.css'; // Import AOS styles
 import AOS from 'aos';
+import 'aos/dist/aos.css'; // Import AOS styles
+import { useEffect } from 'react';
+import Project from "./Project";
 
 const Projects = () => {
   useEffect(() => {
     AOS.init({
-      duration: 800, // Duration of animations
+      duration: 1000,
+      once: true
     });
   }, []);
   const projectList = [
@@ -65,27 +65,34 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen  text-white flex items-center justify-center bg-black bg-opacity-70 "
+      className="min-h-screen py-20 relative bg-gradient-to-b from-black via-[#0a1122] to-black"
     >
-      <div className="max-w-4xl border border-gray-600  a70 rounded-md " 
-        style={{
-          backgroundColor: 'rgba(0,0 ,0 ,0.5)', backdropFilter: 'blur(10px)', // Adjust the blur intensity
-          WebkitBackdropFilter: 'blur(10px)'
-        }}
-      >
-        <h2 className="text-3xl font-bold text-center pt-6 black-ops-one-regular transition-colors duration-300 ease-in-out hover:text-gray-500"
-        
-        
-        >Projects</h2>
-        <div className="mt-10" data-aos="zoom-in" data-aos-delay="100"  >
-          {projectList.map((proj, index) => (
-            <Project
-              key={index}
-              title={proj.title}
-              description={proj.description}
-              link={proj.link}
-            />
-          ))}
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div 
+          className="max-w-5xl mx-auto bg-[#1a2544]/40 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl"
+          data-aos="fade-up"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-center p-8 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            Projects
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
+            {projectList.map((proj, index) => (
+              <Project
+                key={index}
+                title={proj.title}
+                description={proj.description}
+                link={proj.link}
+                index={index}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

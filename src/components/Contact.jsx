@@ -1,16 +1,16 @@
-import { useState,useRef } from 'react';
-import { Formik, Field, Form, ErrorMessage } from 'formik';
-import ReCAPTCHA from 'react-google-recaptcha';
-import axios from 'axios';
+import { faGithub, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import Snackbar from "@mui/material/Snackbar";
-import { faWhatsapp, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import axios from 'axios';
+import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { useEffect, useRef, useState } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { useEffect } from 'react';
-import 'aos/dist/aos.css'; // Import AOS styles
 import AOS from 'aos';
+import 'aos/dist/aos.css'; // Import AOS styles
 
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
 const Contact = () => {
     useEffect(() => {
@@ -66,127 +66,145 @@ console.log(recaptchaRef.current,'❤️');
     };
 
     return (
-        <section
-            id="contact"
-            className="min-h-screen flex items-center justify-center relative bg-black bg-opacity-70"
-        >
-          
-            <div className="relative z-10  p-6 w-[904px] a70 border border-gray-600  rounded-md shadow-lg"
-                style={{
-                    backgroundColor: 'rgba(0,0 ,0 ,0.5)', backdropFilter: 'blur(10px)', // Adjust the blur intensity
-                    WebkitBackdropFilter: 'blur(10px)',
-                }}>
-                <h3 className="text-2xl font-semibold text-white black-ops-one-regular mt-6">Get in Touch</h3>
-                <div data-aos="fade-up" className="flex space-x-4 my-4">
-                    <a href="https://wa.me/923201970649" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faWhatsapp} className="text-2xl text-green-500 hover:text-green-400 transition duration-300" />
-                    </a>
-                    <a href="http://github.com/salimkhandev" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faGithub} className="text-2xl text-white hover:text-gray-400 transition duration-300" />
-                    </a>
-                    <a href="https://www.linkedin.com/in/salim-khan-969492256" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faLinkedin} className="text-2xl text-blue-600 hover:text-blue-500 transition duration-300" />
-                    </a>
-                </div>
-                <h2 data-aos="fade-in" className="text-3xl font-bold black-ops-one-regular text-white text-center ">Direct Contact Me</h2>
-                <Formik
-                
-                    initialValues={{ name: '', email: '', message: '' }}
-                    validate={values => {
-                        const errors = {};
-                        if (!values.name) {
-                            errors.name = 'Required';
-                        }
-                        if (!values.email) {
-                            errors.email = 'Required';
-                        } else if (
-                            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-                        ) {
-                            errors.email = 'Invalid email address';
-                        }
-                        if (!values.message) {
-                            errors.message = 'Required';
-                        }
-                        return errors;
-                    }}
-                    onSubmit={handleSubmit}
+        <section id="contact" className="min-h-screen py-20 relative bg-gradient-to-b from-black via-[#0a1122] to-black">
+            {/* Decorative background elements */}
+            <div className="absolute inset-0 overflow-hidden">
+                <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
+            </div>
+
+            <div className="container mx-auto px-4 relative z-10">
+                <div className="max-w-3xl mx-auto bg-[#1a2544]/40 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl"
+                    data-aos="fade-up"
                 >
-                    {({ isSubmitting }) => (
-                        <Form data-aos="fade-in" data-aos-delay="200" className="mt-8 space-y-4 ">
-                            <div>
-                                <label htmlFor="name" className="block text-sm font-bold text-white">
-                                    Name:
-                                </label>
-                                <Field
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    className="w-full border text-white px-3 py-2 rounded-md bg-transparent  "
-                                />
-                                <ErrorMessage name="name" component="div" className="text-red-500 text-sm mt-1" />
-                            </div>
-                            <div>
-                                <label htmlFor="email" className="block text-sm font-bold text-white">
-                                    Email:
-                                </label>
-                                <Field
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    className="w-full text-white  bg-transparent border px-3 py-2 rounded-md"
-                                />
-                                <ErrorMessage name="email" component="div" className="text-red-500 text-sm mt-1" />
-                            </div>
-                            <div>
-                                <label htmlFor="message" className="block text-sm font-bold text-white">
-                                    Message:
-                                </label>
-                                <Field
-                                    as="textarea"
-                                    id="message"
-                                    name="message"
-                                    className="w-full border text-white  bg-transparent px-3 py-2 rounded-md"
-                                />
-                                <ErrorMessage name="message" component="div" className="text-red-500 text-sm mt-1" />
-                            </div>
-                            <div className="mt-4" >
-
-                                <ReCAPTCHA
-                                    sitekey="6LfPzhUqAAAAAC7Qz5KXAwdmLlHVE83PtS2uyzXO" // Replace with your site key
-                                    onChange={handleRecaptchaChange}
-                                    ref={recaptchaRef}
-                                    
-
-                                />
+                    {/* Header Section */}
+                    <div className="text-center p-8 border-b border-white/10">
+                        <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-6">
+                            Get in Touch
+                        </h2>
                         
-                            </div>
-                            <div className='w-full  flex justify-center '>
+                        {/* Social Links */}
+                        <div className="flex justify-center space-x-6 mt-4">
+                            {[
+                                { icon: faWhatsapp, href: "https://wa.me/923201970649", color: "hover:text-green-400" },
+                                { icon: faGithub, href: "http://github.com/salimkhandev", color: "hover:text-gray-400" },
+                                { icon: faLinkedin, href: "https://www.linkedin.com/in/salim-khan-969492256", color: "hover:text-blue-400" }
+                            ].map((social, index) => (
+                                <a
+                                    key={index}
+                                    href={social.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`transform hover:scale-110 transition-all duration-300 ${social.color}`}
+                                >
+                                    <FontAwesomeIcon icon={social.icon} className="text-3xl text-white/80" />
+                                </a>
+                            ))}
+                        </div>
+                    </div>
 
-                            <button
-                            
-                                type="submit"
-                                disabled={isSubmitting}
-                                    className="bg-blue-900 hover:bg-blue-500  text-white font-bold py-2 px-4 rounded"
-                            >
-                                {isSubmitting ? ( 
-                                    <div className="flex place-content-center text-blue-900 items-center">
-                                        <div className="spinner"></div>
+                    {/* Form Section */}
+                    <div className="p-8">
+                        <Formik
+                            initialValues={{ name: '', email: '', message: '' }}
+                            validate={values => {
+                                const errors = {};
+                                if (!values.name) errors.name = 'Required';
+                                if (!values.email) {
+                                    errors.email = 'Required';
+                                } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
+                                    errors.email = 'Invalid email address';
+                                }
+                                if (!values.message) errors.message = 'Required';
+                                return errors;
+                            }}
+                            onSubmit={handleSubmit}
+                        >
+                            {({ isSubmitting }) => (
+                                <Form className="space-y-6">
+                                    {/* Input Fields */}
+                                    {[
+                                        { name: 'name', label: 'Name', type: 'text' },
+                                        { name: 'email', label: 'Email', type: 'email' },
+                                        { name: 'message', label: 'Message', type: 'textarea' }
+                                    ].map((field) => (
+                                        <div key={field.name} className="space-y-2">
+                                            <label htmlFor={field.name} className="block text-sm font-medium text-white/80">
+                                                {field.label}
+                                            </label>
+                                            <Field
+                                                as={field.type === 'textarea' ? 'textarea' : 'input'}
+                                                type={field.type}
+                                                id={field.name}
+                                                name={field.name}
+                                                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40
+                                                    focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent
+                                                    transition-all duration-300"
+                                                placeholder={`Enter your ${field.label.toLowerCase()}`}
+                                                rows={field.type === 'textarea' ? 4 : undefined}
+                                            />
+                                            <ErrorMessage name={field.name}>
+                                                {msg => <div className="text-red-400 text-sm mt-1">{msg}</div>}
+                                            </ErrorMessage>
+                                        </div>
+                                    ))}
+
+                                    {/* ReCAPTCHA */}
+                                    <div className="flex justify-center">
+                                        <ReCAPTCHA
+                                            sitekey="6LfPzhUqAAAAAC7Qz5KXAwdmLlHVE83PtS2uyzXO"
+                                            onChange={handleRecaptchaChange}
+                                            ref={recaptchaRef}
+                                            theme="dark"
+                                        />
                                     </div>
-                                ) : (
-                                    'Submit' 
-                                )}
-                            </button>
-                            </div>
-                        </Form>
-                    )}
-                </Formik>
-                    <Snackbar
-                        open={snackbar.open}
-                        autoHideDuration={3000}
-                        onClose={handleCloseSnackbar}
-                        message={snackbar.message}
-                        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-                    />
+
+                                    {/* Submit Button */}
+                                    <div className="flex justify-center">
+                                        <button
+                                            type="submit"
+                                            disabled={isSubmitting}
+                                            className="group relative px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg
+                                                text-white font-medium hover:from-blue-600 hover:to-purple-600 transition-all duration-300
+                                                focus:outline-none focus:ring-2 focus:ring-blue-500/50 disabled:opacity-50"
+                                        >
+                                            {isSubmitting ? (
+                                                <div className="flex items-center space-x-2">
+                                                    <div className="w-5 h-5 border-t-2 border-white rounded-full animate-spin"></div>
+                                                    <span>Sending...</span>
+                                                </div>
+                                            ) : (
+                                                <div className="flex items-center space-x-2">
+                                                    <span>Send Message</span>
+                                                    <FontAwesomeIcon 
+                                                        icon={faPaperPlane} 
+                                                        className="transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" 
+                                                    />
+                                                </div>
+                                            )}
+                                        </button>
+                                    </div>
+                                </Form>
+                            )}
+                        </Formik>
+                    </div>
+                </div>
+
+                {/* Snackbar */}
+                <Snackbar
+                    open={snackbar.open}
+                    autoHideDuration={3000}
+                    onClose={handleCloseSnackbar}
+                    message={snackbar.message}
+                    anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+                    ContentProps={{
+                        sx: {
+                            background: '#1a2544',
+                            backdropFilter: 'blur(10px)',
+                            border: '1px solid rgba(255,255,255,0.1)'
+                        }
+                    }}
+                />
             </div>
         </section>
     );

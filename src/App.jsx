@@ -72,7 +72,7 @@ function App() {
                     <About />
                     <Projects />
                     <Contact />
-                    <VirtualAssistant/>
+                    <VirtualAssistant />
                   </>
                 } />
               </Routes>

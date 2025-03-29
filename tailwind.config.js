@@ -20,6 +20,12 @@ export default {
           '50%': { transform: 'translateY(-10px)' },
         },
       },
+      fontFamily: {
+        'cinzel': ['Cinzel', 'serif'],
+        'playfair': ['Playfair Display', 'serif'],
+        'righteous': ['Righteous', 'cursive'],
+        'sacramento': ['Sacramento', 'cursive'],
+      },
     },
   },
   plugins: [],
