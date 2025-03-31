@@ -6,13 +6,13 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setScrolled(window.scrollY > 20);
+  //   };
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // }, []);
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -63,12 +63,12 @@ const Header = () => {
         <div
           className={`fixed inset-0 transition-all duration-500 md:hidden
                         ${isOpen
-              ? 'opacity-100 translate-x-0'
+              ? 'opacity-100  translate-x-0'
               : 'opacity-0 translate-x-full pointer-events-none'
             }`}
         >
           {/* Enhanced blur background with gradient */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0a1122]/95 to-[#0a1122]/98 backdrop-blur-2xl" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0a1122]/95 to-[#0a1122]/98 " />
 
           {/* Content Layer with improved spacing */}
           <div className="relative z-10 flex flex-col items-center justify-center h-full">

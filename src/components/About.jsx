@@ -47,30 +47,12 @@ const About = () => {
                 a Software Engineering undergraduate student at 
                 <span className="font-semibold text-purple-400"> Islamia College University Peshawar</span>. 
               </p>
-              
-              <div className="flex flex-wrap gap-4 justify-center py-4">
-                {['Problem Solver', 'Web Developer', 'UI/UX Enthusiast'].map((tag, index) => (
-                  <span 
-                    key={index}
-                    className="px-4 py-2 bg-white/5 rounded-full text-sm font-medium text-white/80 
-                    border border-white/10 hover:bg-white/10 transition-colors duration-300"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
+        
             </div>
 
             {/* Skills Section */}
             <div data-aos="fade-up" className="space-y-8">
-              <div className="text-center">
-                <h3 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent inline-block">
-                  Technical Skills
-                </h3>
-                <p className="text-white/60 mt-2">
-                  Technologies I work with
-                </p>
-              </div>
+            
               
               <div className="skill-bar">
                 <SkillBar />

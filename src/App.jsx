@@ -59,7 +59,7 @@ function App() {
   }, [showSplash]);
   return (
     <Router>
-      <div>
+      <div className='svg'>
         {
           showSplash ? (<SplashScreen />) : (
             <>

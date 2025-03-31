@@ -163,9 +163,9 @@ body::-webkit-scrollbar {
 }
 
 
-/* Curser Pointer Styling */
+
 .svg {
-  cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.svg), auto;
+  cursor: url(https://img.icons8.com/color/23/blue-pointer.png), auto;
 }
 
 /* Spinner When the form is submiting */
