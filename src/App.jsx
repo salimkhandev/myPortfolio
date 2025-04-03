@@ -9,6 +9,7 @@ import Headers from './components/Headers';
 import AdminPanel from './components/AdminPanel';
 import SplashScreen from './components/SplashScreen';
 import VirtualAssistant from './components/VirtualAssistant';
+import CursorTrail from './components/CursorTrail';
 function App() {
   const [showSplash, setShowSplash] = useState(false);
 
@@ -73,6 +74,7 @@ function App() {
                     <Projects />
                     <Contact />
                     <VirtualAssistant />
+                    <CursorTrail />
                   </>
                 } />
               </Routes>
