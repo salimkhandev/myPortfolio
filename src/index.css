@@ -163,9 +163,12 @@ body::-webkit-scrollbar {
 }
 
 
-
 .svg {
   cursor: url(https://img.icons8.com/color/23/blue-pointer.png), auto;
+}
+
+.handDrag {
+  cursor: url(https://img.icons8.com/color/28/hand-drag.png), auto;
 }
 
 /* Spinner When the form is submiting */

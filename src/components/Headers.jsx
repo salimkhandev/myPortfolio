@@ -95,7 +95,7 @@ const Header = () => {
                       icon={item.icon}
                       className="mr-3 text-blue-400 text-xl"
                     />
-                    <span className="bg-gradient-to-r from-[#60A5FA] to-[#93C5FD] bg-clip-text text-transparent 
+                    <span className="bg-gradient-to-r  from-[#60A5FA] to-[#93C5FD] bg-clip-text text-transparent 
                                             text-2xl font-['Great_Vibes']">
                       {item.text}
                     </span>
@@ -118,9 +118,9 @@ const Header = () => {
             <li key={index}>
               <a
                 href={item.href}
-                className="relative px-3 py-2 group font-['Great_Vibes'] text-2xl"
+                className="relative handDrag px-3 py-2 group font-['Great_Vibes'] text-2xl"
               >
-                <span className="relative z-10 bg-gradient-to-r from-[#60A5FA] to-[#93C5FD] bg-clip-text text-transparent group-hover:from-[#93C5FD] group-hover:to-[#C084FC] transition-all duration-300">
+                <span className="relative  z-10 bg-gradient-to-r from-[#60A5FA] to-[#93C5FD] bg-clip-text text-transparent group-hover:from-[#93C5FD] group-hover:to-[#C084FC] transition-all duration-300">
                   {item.text}
                 </span>
               </a>
