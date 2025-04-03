@@ -42,10 +42,10 @@ const Skills = () => {
         { name: "HTML", color: "bg-[#E44D26]", icon: "html.png", textColor: "text-white", description: "Semantic HTML and accessibility" },
         { name: "CSS", color: "bg-[#264DE4]", icon: "css.png", textColor: "text-white", description: "Responsive layouts with Flexbox/Grid" },
         { name: "Tailwind CSS", color: "bg-blue-900", icon: "twcss.png", textColor: "text-white", iconClass: "contrast-125", description: "Utility-first styling for rapid UI" },
-        { name: "Node.js", color: "bg-[#339933]", icon: "node.png", textColor: "text-white", description: "Built RESTful APIs and backends" },
+        { name: "Node.js", color: "bg-[#ffff]", icon: "node.png", textColor: "text-white", description: "Built RESTful APIs and backends" },
         { name: "PostgreSQL", color: "bg-[#336791]", icon: "pg.png", textColor: "text-white", description: "Complex SQL queries and DB design" },
-        { name: "MongoDB", color: "bg-[#47A248]", icon: "mongo.png", textColor: "text-white", description: "NoSQL database for flexible models" },
-        { name: "PWA", color: "bg-[#9331EB]", icon: "pwa.png", textColor: "text-white", description: "Offline-first applications" },
+        { name: "MongoDB",  color: "bg-blue-900", icon: "mongo.png", textColor: "text-white", description: "NoSQL database for flexible models" },
+        { name: "PWA", color: "bg-[#C8EDE6]", icon: "pwa.png", textColor: "text-white", description: "Offline-first applications" },
         { name: "git", color: "bg-[#F05032]", icon: "git.png", textColor: "text-white", description: "Version control and collaboration" }
     ];
 
