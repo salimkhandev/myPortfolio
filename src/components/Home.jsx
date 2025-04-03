@@ -1,7 +1,7 @@
 import "animate.css";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { motion } from 'framer-motion'; // You'll need to install framer-motion
+import { motion } from 'framer-motion';
 import { useEffect } from 'react';
 import { ReactTyped } from "react-typed";
 
@@ -39,20 +39,39 @@ const Home = () => {
           transition={{ duration: 0.5 }}
           className="relative mb-8 inline-block"
         >
-          {/* Profile image with animated border */}
-          <div className="relative group">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
-            <img
-              src="/profilePic.jpg"
-              className="relative h-48 w-48 md:h-56 md:w-56 rounded-full object-cover transform transition duration-500 hover:scale-105"
-              alt="Salim Khan"
-            />
-          </div>
-
-          {/* Animated rings around the profile picture */}
-          <div className="absolute inset-0 -z-10">
-            <div className="absolute inset-0 border-2 border-blue-500/20 rounded-full animate-spin-slow"></div>
-            <div className="absolute inset-4 border-2 border-purple-500/20 rounded-full animate-spin-slow-reverse"></div>
+          {/* Spinning border container */}
+          <div className="relative w-[232px] h-[232px] md:w-[264px] md:h-[264px]">
+            {/* Colorful spinning ring - positioned absolutely */}
+            <div className="absolute inset-0 rounded-full overflow-hidden animate-spin-slow">
+              <div className="h-full w-full flex">
+                <div className="h-full w-1/6 bg-blue-500"></div>
+                <div className="h-full w-1/6 bg-purple-500"></div>
+                <div className="h-full w-1/6 bg-pink-500"></div>
+                <div className="h-full w-1/6 bg-indigo-500"></div>
+                <div className="h-full w-1/6 bg-cyan-500"></div>
+                <div className="h-full w-1/6 bg-violet-500"></div>
+              </div>
+            </div>
+            
+            {/* White ring spacer for separation */}
+            <div className="absolute inset-[10px] bg-white rounded-full"></div>
+            
+            {/* Dark background for profile */}
+            <div className="absolute inset-[14px] bg-[#0a1122] rounded-full"></div>
+            
+            {/* Profile image container with fixed dimensions - no scaling applied here */}
+            <div className="absolute inset-[20px] rounded-full overflow-hidden">
+              {/* Only the image itself scales on hover (not the container) */}
+              <img
+                src="/profilePic.jpg"
+                className="absolute inset-0 w-full h-full object-cover hover:scale-110 transition-transform duration-500 ease-in-out"
+                alt="Salim Khan"
+                style={{ transformOrigin: 'center' }}
+              />
+            </div>
+            
+            {/* Dotted spinning border - clear visibility */}
+            <div className="absolute inset-[-5px] rounded-full border-4 border-dotted border-yellow-400 animate-spin-slow-reverse"></div>
           </div>
         </motion.div>
 
@@ -63,14 +82,12 @@ const Home = () => {
           transition={{ delay: 0.5, duration: 0.5 }}
           className="space-y-6"
         >
-          {/* Name with gradient */}
           <h1 className="text-4xl md:text-6xl font-bold">
             <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
               Salim Khan
             </span>
           </h1>
 
-          {/* Typed text container */}
           <div className="h-20 flex justify-center items-center">
             <ReactTyped
               className="text-xl md:text-2xl font-light text-white/90"
@@ -82,12 +99,10 @@ const Home = () => {
             />
           </div>
 
-          {/* Tagline with gradient */}
           <p className="text-lg bg-gradient-to-r from-gray-400 to-white/80 bg-clip-text text-transparent">
             Turning ideas into reality through code
           </p>
 
-          {/* CTA Button */}
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
