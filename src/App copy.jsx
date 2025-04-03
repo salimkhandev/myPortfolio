@@ -22,7 +22,7 @@ function App() {
       setShowSplash(false);
     }, 3000);
 
-    return () => clearTimeout(splashTimeout); 
+    return () => clearTimeout(splashTimeout); // Cleanup timeout on unmount
 
   }, []);
 
@@ -59,7 +59,7 @@ function App() {
   }, [showSplash]);
   return (
     <Router>
-      <div className='svg'>
+      <div>
         {
           showSplash ? (<SplashScreen />) : (
             <>
@@ -72,7 +72,7 @@ function App() {
                     <About />
                     <Projects />
                     <Contact />
-                    <VirtualAssistant />
+                    <VirtualAssistant/>
                   </>
                 } />
               </Routes>
