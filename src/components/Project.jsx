@@ -13,7 +13,7 @@ const Project = ({ title, description, link, index }) => {
       
       <div className="relative p-6 space-y-4">
         {/* Title with gradient on hover */}
-        <h3 className="text-xl font-bold tracking-tight group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+        <h3 className="text-xl font-bold tracking-tight group-hover:bg-gradient-to-r text-[#8594FB] group-hover:from-blue-400 group-hover:to-purple-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
           {title}
         </h3>
 

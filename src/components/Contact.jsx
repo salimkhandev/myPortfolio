@@ -1,7 +1,7 @@
 import { faGithub, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import Snackbar from "@mui/material/Snackbar";
 import axios from 'axios';
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { Form, Formik } from 'formik';
 import { useEffect, useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 
@@ -11,6 +11,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import AOS styles
 
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import LoadingButton from '@mui/lab/LoadingButton';
+import { Alert, TextField } from '@mui/material';
 
 const Contact = () => {
     useEffect(() => {
@@ -26,10 +28,10 @@ const Contact = () => {
         setRecaptchaValue(value);
     };
 
-    const handleSubmit = async (values, { setSubmitting ,resetForm }) => {
+    const handleSubmit = async (values, { setSubmitting, resetForm }) => {
         if (!recaptchaValue) {
             alert("Please complete the reCAPTCHA.");
-console.log(recaptchaRef.current,'❤️');
+            console.log(recaptchaRef.current,'❤️');
             setSubmitting(false);
             return;
         }
@@ -54,9 +56,6 @@ console.log(recaptchaRef.current,'❤️');
             // Handle any errors
             console.error('Error:', error);
         }
-
-
-
 
         setSubmitting(false);
         setSnackbar({ open: true, message: "Thank you! Your message has been sent." });
@@ -120,34 +119,103 @@ console.log(recaptchaRef.current,'❤️');
                             }}
                             onSubmit={handleSubmit}
                         >
-                            {({ isSubmitting }) => (
+                            {({ isSubmitting, errors, touched }) => (
                                 <Form className="space-y-6">
-                                    {/* Input Fields */}
-                                    {[
-                                        { name: 'name', label: 'Name', type: 'text' },
-                                        { name: 'email', label: 'Email', type: 'email' },
-                                        { name: 'message', label: 'Message', type: 'textarea' }
-                                    ].map((field) => (
-                                        <div key={field.name} className="space-y-2">
-                                            <label htmlFor={field.name} className="block text-sm font-medium text-white/80">
-                                                {field.label}
-                                            </label>
-                                            <Field
-                                                as={field.type === 'textarea' ? 'textarea' : 'input'}
-                                                type={field.type}
-                                                id={field.name}
-                                                name={field.name}
-                                                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40
-                                                    focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent
-                                                    transition-all duration-300"
-                                                placeholder={`Enter your ${field.label.toLowerCase()}`}
-                                                rows={field.type === 'textarea' ? 4 : undefined}
-                                            />
-                                            <ErrorMessage name={field.name}>
-                                                {msg => <div className="text-red-400 text-sm mt-1">{msg}</div>}
-                                            </ErrorMessage>
-                                        </div>
-                                    ))}
+                                    {/* Replace with MUI components */}
+                                    <TextField
+                                        fullWidth
+                                        id="name"
+                                        name="name"
+                                        label="Name"
+                                        variant="outlined"
+                                        error={errors.name && touched.name}
+                                        helperText={errors.name && touched.name ? errors.name : ""}
+                                        InputProps={{
+                                            sx: {
+                                                color: 'white',
+                                                '& .MuiOutlinedInput-notchedOutline': {
+                                                    borderColor: 'rgba(255, 255, 255, 0.1)'
+                                                },
+                                                '&:hover .MuiOutlinedInput-notchedOutline': {
+                                                    borderColor: 'rgba(255, 255, 255, 0.3)'
+                                                },
+                                                '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                                                    borderColor: '#3b82f6'
+                                                },
+                                                backgroundColor: 'rgba(255, 255, 255, 0.05)'
+                                            }
+                                        }}
+                                        InputLabelProps={{
+                                            sx: { color: 'rgba(255, 255, 255, 0.7)' }
+                                        }}
+                                        FormHelperTextProps={{
+                                            sx: { color: '#f87171' }
+                                        }}
+                                    />
+
+                                    <TextField
+                                        fullWidth
+                                        id="email"
+                                        name="email"
+                                        label="Email"
+                                        variant="outlined"
+                                        error={errors.email && touched.email}
+                                        helperText={errors.email && touched.email ? errors.email : ""}
+                                        InputProps={{
+                                            sx: {
+                                                color: 'white',
+                                                '& .MuiOutlinedInput-notchedOutline': {
+                                                    borderColor: 'rgba(255, 255, 255, 0.1)'
+                                                },
+                                                '&:hover .MuiOutlinedInput-notchedOutline': {
+                                                    borderColor: 'rgba(255, 255, 255, 0.3)'
+                                                },
+                                                '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                                                    borderColor: '#3b82f6'
+                                                },
+                                                backgroundColor: 'rgba(255, 255, 255, 0.05)'
+                                            }
+                                        }}
+                                        InputLabelProps={{
+                                            sx: { color: 'rgba(255, 255, 255, 0.7)' }
+                                        }}
+                                        FormHelperTextProps={{
+                                            sx: { color: '#f87171' }
+                                        }}
+                                    />
+
+                                    <TextField
+                                        fullWidth
+                                        id="message"
+                                        name="message"
+                                        label="Message"
+                                        variant="outlined"
+                                        multiline
+                                        rows={4}
+                                        error={errors.message && touched.message}
+                                        helperText={errors.message && touched.message ? errors.message : ""}
+                                        InputProps={{
+                                            sx: {
+                                                color: 'white',
+                                                '& .MuiOutlinedInput-notchedOutline': {
+                                                    borderColor: 'rgba(255, 255, 255, 0.1)'
+                                                },
+                                                '&:hover .MuiOutlinedInput-notchedOutline': {
+                                                    borderColor: 'rgba(255, 255, 255, 0.3)'
+                                                },
+                                                '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                                                    borderColor: '#3b82f6'
+                                                },
+                                                backgroundColor: 'rgba(255, 255, 255, 0.05)'
+                                            }
+                                        }}
+                                        InputLabelProps={{
+                                            sx: { color: 'rgba(255, 255, 255, 0.7)' }
+                                        }}
+                                        FormHelperTextProps={{
+                                            sx: { color: '#f87171' }
+                                        }}
+                                    />
 
                                     {/* ReCAPTCHA */}
                                     <div className="flex justify-center">
@@ -159,30 +227,28 @@ console.log(recaptchaRef.current,'❤️');
                                         />
                                     </div>
 
-                                    {/* Submit Button */}
+                                    {/* Submit Button using MUI Button */}
                                     <div className="flex justify-center">
-                                        <button
+                                        <LoadingButton
                                             type="submit"
-                                            disabled={isSubmitting}
-                                            className="group relative px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg
-                                                text-white font-medium hover:from-blue-600 hover:to-purple-600 transition-all duration-300
-                                                focus:outline-none focus:ring-2 focus:ring-blue-500/50 disabled:opacity-50"
+                                            variant="contained"
+                                            loading={isSubmitting}
+                                            loadingPosition="end"
+                                            endIcon={<FontAwesomeIcon icon={faPaperPlane} />}
+                                            sx={{
+                                                background: 'linear-gradient(to right, #3b82f6, #a855f7)',
+                                                padding: '10px 20px',
+                                                borderRadius: '8px',
+                                                '&:hover': {
+                                                    background: 'linear-gradient(to right, #2563eb, #9333ea)',
+                                                    transform: 'translateY(-2px)',
+                                                    boxShadow: '0 4px 20px rgba(59, 130, 246, 0.3)'
+                                                },
+                                                transition: 'all 0.3s ease'
+                                            }}
                                         >
-                                            {isSubmitting ? (
-                                                <div className="flex items-center space-x-2">
-                                                    <div className="w-5 h-5 border-t-2 border-white rounded-full animate-spin"></div>
-                                                    <span>Sending...</span>
-                                                </div>
-                                            ) : (
-                                                <div className="flex items-center space-x-2">
-                                                    <span>Send Message</span>
-                                                    <FontAwesomeIcon 
-                                                        icon={faPaperPlane} 
-                                                        className="transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" 
-                                                    />
-                                                </div>
-                                            )}
-                                        </button>
+                                            Send Message
+                                        </LoadingButton>
                                     </div>
                                 </Form>
                             )}
@@ -195,16 +261,20 @@ console.log(recaptchaRef.current,'❤️');
                     open={snackbar.open}
                     autoHideDuration={3000}
                     onClose={handleCloseSnackbar}
-                    message={snackbar.message}
                     anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-                    ContentProps={{
-                        sx: {
-                            background: '#1a2544',
-                            backdropFilter: 'blur(10px)',
-                            border: '1px solid rgba(255,255,255,0.1)'
-                        }
-                    }}
-                />
+                >
+                    <Alert 
+                        onClose={handleCloseSnackbar} 
+                        severity="success" 
+                        variant="filled"
+                        sx={{
+                            background: 'linear-gradient(to right, #3b82f6, #a855f7)',
+                            color: 'white'
+                        }}
+                    >
+                        {snackbar.message}
+                    </Alert>
+                </Snackbar>
             </div>
         </section>
     );

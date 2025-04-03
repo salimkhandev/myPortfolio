@@ -27,6 +27,7 @@ const Skills = () => {
         
         // Cleanup
         return () => window.removeEventListener('resize', checkMobile);
+        
     }, []);
 
     useEffect(() => {
