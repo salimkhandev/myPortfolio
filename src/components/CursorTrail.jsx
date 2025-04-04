@@ -94,7 +94,6 @@ const CursorTrail = ({
 
             const newParticles = Array.from({ length: currentDensity }).map((_, i) => ({
                 id: Date.now() + i,
-                x: e.clientX + (Math.random() * 10 - 5),
                 x: e.clientX + (Math.random() * 20 - 10),
                 y: e.clientY + (Math.random() * 20 - 10),
                 size: Math.random() * (sizeRange[1] - sizeRange[0]) + sizeRange[0],

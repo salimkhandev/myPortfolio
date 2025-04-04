@@ -51,7 +51,7 @@ const Skills = () => {
     ];
 
     return (
-        <section className="min-h-screen relative max-md:bg-none bg-gradient-to-b from-black via-[#0a1122] to-black py-12 md:py-20">
+        <section className="max-h-screen relative max-md:bg-none bg-gradient-to-b from-black via-[#0a1122] to-black py-12 md:py-20">
             <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute top-1/4 left-1/4 w-52 md:w-64 h-52 md:h-64 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
                 <div className="absolute bottom-1/4 right-1/4 w-52 md:w-64 h-52 md:h-64 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
