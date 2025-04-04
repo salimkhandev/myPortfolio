@@ -15,7 +15,7 @@ const About = () => {
   return (
     <section 
       id="about"
-      className="min-h-screen relative bg-gradient-to-b from-black via-[#0a1122] to-black py-20"
+      className="min-h-screen relative bg-gradient-to-b  from-black via-[#0a1122] to-black py-20"
     >
       {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -23,10 +23,10 @@ const About = () => {
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto bg-[#1a2544]/40 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl">
+      <div className="container  mx-auto px-4 relative z-10">
+        <div className="max-w-4xl mx-auto   md:bg-[#1a2544]/40 max-md:bg-none md:backdrop-blur-xl md:rounded-2xl min-md:border border-white/10 md:shadow-2xl">
           {/* About Section Header */}
-          <div className="text-center p-8 border-b border-white/10">
+          <div className="text-center p-8  border-b border-white/10">
             <h2 
               data-aos="fade-down"
               className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"

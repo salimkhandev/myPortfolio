@@ -75,7 +75,7 @@ const Projects = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div 
-          className="max-w-5xl mx-auto bg-[#1a2544]/40 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl"
+          className="max-w-5xl mx-auto md:bg-[#1a2544]/40 md:backdrop-blur-xl rounded-2xl md:border md:border-white/10 md:shadow-2xl"
           data-aos="fade-up"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-center p-8 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
