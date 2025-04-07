@@ -1,15 +1,16 @@
 import { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
-import Home from './components/Home';
 import About from './components/About';
-import Contact from './components/Contact';
-import Projects from './components/Projects';
-import Headers from './components/Headers';
 import AdminPanel from './components/AdminPanel';
+import Contact from './components/Contact';
+import CursorTrail from './components/CursorTrail';
+import Headers from './components/Headers';
+import Home from './components/Home';
+import Projects from './components/Projects';
 import SplashScreen from './components/SplashScreen';
 import VirtualAssistant from './components/VirtualAssistant';
-import CursorTrail from './components/CursorTrail';
+// import My3DBackground from './components/My3DBackground';
 function App() {
   const [showSplash, setShowSplash] = useState(false);
 
@@ -75,6 +76,7 @@ function App() {
                     <Contact />
                     <VirtualAssistant />
                     <CursorTrail />
+                    {/* <My3DBackground /> */}
                   </>
                 } />
               </Routes>

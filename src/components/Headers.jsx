@@ -5,7 +5,8 @@ import { useEffect, useState } from "react";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
+  // how to add a <button></button>
+  
   // useEffect(() => {
   //   const handleScroll = () => {
   //     setScrolled(window.scrollY > 20);

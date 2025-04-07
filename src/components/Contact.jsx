@@ -26,6 +26,8 @@ const Contact = () => {
 
     const handleRecaptchaChange = (value) => {
         setRecaptchaValue(value);
+        // console the vlaue
+
     };
 
     const handleSubmit = async (values, { setSubmitting, resetForm }) => {
@@ -65,7 +67,7 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="min-h-screen py-20 relative bg-gradient-to-b from-black via-[#0a1122] to-black">
+        <section id="contact" className="min-h-screen py-20 relative bg-gradient-to-b from-black via-[#0a1122] to-black overflow-hidden">
             {/* Decorative background elements */}
             <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
