@@ -63,7 +63,7 @@ const Home = () => {
             <div className="absolute inset-[20px] rounded-full overflow-hidden">
               {/* Only the image itself scales on hover (not the container) */}
               <img
-                src="/profilePic.jpg"
+                src="/profilePic.webp"
                 className="absolute inset-0 w-full h-full object-cover hover:scale-110 transition-transform duration-500 ease-in-out"
                 alt="Salim Khan"
                 style={{ transformOrigin: 'center' }}
