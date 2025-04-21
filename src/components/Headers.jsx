@@ -5,17 +5,7 @@ import { useEffect, useState } from "react";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  // how to add a <button></button>
-  
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     setScrolled(window.scrollY > 20);
-  //   };
-  //   window.addEventListener('scroll', handleScroll);
-  //   return () => window.removeEventListener('scroll', handleScroll);
-  // }, []);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -28,15 +18,15 @@ const Header = () => {
     <header className={`fixed w-full top-0 z-50 transition-all duration-300`}>
       {/* Semi-transparent header background */}
       <div className={`absolute inset-0 transition-all duration-300 ${scrolled
-          ? 'bg-[#0a1122]/80 backdrop-blur-md'
-          : 'bg-gradient-to-b from-[#0a1122] to-transparent'
+        ? 'bg-[#0a1122]/80 backdrop-blur-md'
+        : 'bg-gradient-to-b from-[#0a1122] to-transparent'
         }`} />
 
       <nav className="container mx-auto flex justify-between items-center px-4 py-4 relative z-10">
         {/* Logo */}
         <a href="#home" className="flex items-center group z-50">
           <span className="text-xl font-['Great_Vibes'] bg-gradient-to-r from-[#60A5FA] to-[#93C5FD] bg-clip-text text-transparent">
-<img src="  /profilePic.webp" alt="logo" className="w-10  h-10 rounded-full" />
+            <img src="/profilePic.webp" alt="logo" className="w-10 h-10 rounded-full" />
           </span>
         </a>
 
@@ -117,18 +107,50 @@ const Header = () => {
             { href: "#va", text: "VA", icon: faLaptop }
           ].map((item, index) => (
             <li key={index}>
-              <a
-                href={item.href}
-                className="relative handDrag px-3 py-2 group font-['Great_Vibes'] text-2xl"
-              >
-                <span className="relative  z-10 bg-gradient-to-r from-[#60A5FA] to-[#93C5FD] bg-clip-text text-transparent group-hover:from-[#93C5FD] group-hover:to-[#C084FC] transition-all duration-300">
-                  {item.text}
-                </span>
-              </a>
+              {(
+                <a
+                  href={item.href}
+                  className="relative handDrag px-3 py-2 group font-['Great_Vibes'] text-2xl shimmer-effect"
+                >
+                  <span className="relative z-10 bg-gradient-to-r from-[#60A5FA] to-[#93C5FD] bg-clip-text text-transparent group-hover:from-[#A64DDA] group-hover:to-[#A64DDA] group-hover:text-shadow-[0_0_12px_rgba(166,77,218,0.6),0_0_20px_rgba(166,77,218,0.4)] transition-all duration-300">
+                    {item.text}
+                  </span>
+                </a>
+              )}
             </li>
           ))}
         </ul>
       </nav>
+
+      <style jsx>{`
+        .shimmer-effect::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 0;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(166, 77, 218, 0.6), transparent);
+          transition: width 0.4s ease;
+          pointer-events: none;
+        }
+
+        .shimmer-effect:hover::before {
+          width: 100%;
+        }
+
+        @keyframes magneticGlowPurple {
+          0% {
+            box-shadow: 0 0 35px rgba(166, 77, 218, 0.6), 0 0 70px rgba(166, 77, 218, 0.3);
+          }
+          50% {
+            box-shadow: 0 0 50px rgba(166, 77, 218, 0.8), 0 0 100px rgba(166, 77, 218, 0.5);
+          }
+          100% {
+            box-shadow: 0 0 35px rgba(166, 77, 218, 0.6), 0 0 70px rgba(166, 77, 218, 0.3);
+          }
+        }
+      `}</style>
     </header>
   );
 };
