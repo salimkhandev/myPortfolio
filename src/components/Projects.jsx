@@ -17,7 +17,7 @@ const Projects = () => {
       description: "",
       link: "https://ghss-management.vercel.app",
       githubLink: "https://github.com/salimkhandev/GHSS-Management",
-      technologies: ["React", "Node.js", "Material-UI", "Tailwind CSS"],
+      technologies: ["React", "Node.js", "Material-UI", "Tailwind CSS", "JWT", "Bcryptjs", "Postgresql", "Redis", "Storage Bucket (supabase)","Skeletion Loaders", "Formik", "Yup","Piechart.js"],
       image: "/techIcons/projectScreenshot/schoolmng.png"
     },
     {
