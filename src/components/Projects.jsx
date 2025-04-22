@@ -1,5 +1,5 @@
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // Import AOS styles
+import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import Project from "./Project";
 
@@ -13,70 +13,82 @@ const Projects = () => {
 
   const projectList = [
     {
-      title: "School Management System (beta version)",
-      description:
-        "Created a comprehensive school management application utilizing Node.js, React, Material-UI, and Tailwind CSS for a responsive and user-friendly experience.",
+      title: "School Management System (still working on it...)",
+      description: "",
       link: "https://ghss-management.vercel.app",
       githubLink: "https://github.com/salimkhandev/GHSS-Management",
       technologies: ["React", "Node.js", "Material-UI", "Tailwind CSS"],
-      // image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAZwvFgirjun2d5KsHYrsqPXogcr8qqt5qYg&s" // Add image paths if available
+      image: "../../public/techIcons/projectScreenshot/schoolmng.png"
     },
     {
       title: "Push Notifications",
-      description:
-        "Used Firebase Cloud Messaging (FCM) service to send in-app and background push notifications to all devices or specific ones from custom UI",
+      description: "Send background and foreground push notification to desktops, Iphone and android devices , in bulk or individually.",
       link: "https://firebase-fcm2.vercel.app",
       githubLink: "https://github.com/salimkhandev/Firebase-FCM",
-      technologies: ["Firebase", "FCM", "React"]
+      technologies: ["Firebase", "FCM", "React"],
+      image: "../../public/techIcons/projectScreenshot/fcm.png"
+    },
+    {
+      title: "offline attendance system (PWA)",
+      description: "Mark attendance offline using persistent IndexedDB. When the internet is back, data is automatically sent to the server.",
+      link: "https://pwa-frontend-123.vercel.app/attendance",
+
+      githubLink: "https://github.com/salimkhandev/pwa-master",
+      technologies: ["React", "PWA", "push notification", "IndexedDB", "bgSync"],
+      image: "../../public/techIcons/projectScreenshot/fullPwa.png"
     },
     {
       title: "TaskTame",
-      description:
-        "Task Tame is a React and Tailwind CSS-powered note-taking app that works offline, is installable, auto-adapts to dark or light mode, offers customization options, and stores notes securely in localStorage",
+      description: "Use and install it offline on any OS",
       link: "https://salimnote.vercel.app",
       githubLink: "https://github.com/salimkhandev/ReactToDo",
-      technologies: ["React", "Tailwind CSS", "PWA", "localStorage"]
-    },
-    {
-      title: "Background Remover",
-      description:
-        "A powerful tool to remove backgrounds from images effortlessly. Built with React",
-      link: "https://backgroundremover-eta.vercel.app/",
-      githubLink: "https://github.com/yourusername/background-remover",
-      technologies: ["React", "Image Processing", "API Integration"]
+      technologies: ["React", "Tailwind CSS", "PWA", "localStorage"],
+      // correct the path of the image
+      image: "../../public/techIcons/projectScreenshot/tasktame.png.png"
+
+
     },
     {
       title: "SITI Networks UI Clone (Pure HTML/CSS)",
-      description:
-        "A responsive front-page replica of SITI Networks, built using only HTML & CSS.",
+      description: "",
       link: "https://siti-networks.vercel.app/",
       githubLink: "https://github.com/salimkhandev/SITI-Networks",
-      technologies: ["HTML", "CSS", "Responsive Design"]
+      technologies: ["HTML", "CSS", "Responsive Design"],
+      image: "../../public/techIcons/projectScreenshot/siti.png"
     },
     {
       title: "SeatGeek",
-      description:
-        "A redesigned version of SeatGeek optimized for PC, offering a streamlined experience tailored for desktop users.",
+      description: "",
       link: "https://seatgreek.vercel.app",
       githubLink: "https://github.com/salimkhandev/seatgreek",
-      technologies: ["React", "CSS", "UI/UX Design"]
+      technologies: ["Next.js"],
+      image: "../../public/techIcons/projectScreenshot/geek.png"
     },
     {
+      title: "Background Remover",
+      description: "",
+      link: "https://backgroundremover-eta.vercel.app/",
+      githubLink: "https://github.com/salimkhandev/BackgroundRemoverFrontend",
+      technologies: ["React", "Image Processing", "API Integration"],
+      image: "../../public/techIcons/projectScreenshot/bgRemove.png"
+    },
+    
+    {
       title: "Offline Snake Game 🐍 (PWA)",
-      description:
-        "A lightweight, offline-capable Snake game. Install it on your home screen and enjoy playing without the internet!",
+      description: "install & play it offline on any OS",
       link: "https://snake-game-pwa.vercel.app",
       githubLink: "https://github.com/salimkhandev/offline-snake-game",
-      technologies: ["JavaScript", "PWA", "HTML5 Canvas"]
+      technologies: ["JavaScript", "PWA", "HTML5 Canvas"],
+      image: "../../public/techIcons/projectScreenshot/snake.png"
     },
     {
       title: "Tic Tac Toe Game",
-      description:
-        "An interactive Tic Tac Toe game built with React and styled using Tailwind CSS. the purpose was to improve my programming logic.",
+      description: "Play against computer",
       link: "https://tic-tac-toe-game-tawny-five.vercel.app",
       githubLink: "https://github.com/salimkhandev/Tic-Tac-Toe-game",
-      technologies: ["React", "Tailwind CSS", "Game Logic"]
-    },
+      technologies: ["React", "Tailwind CSS", "Game Logic"],
+      image: "../../public/techIcons/projectScreenshot/tictactoe.png"
+    }
   ];
 
   return (
@@ -84,7 +96,6 @@ const Projects = () => {
       id="projects"
       className="min-h-screen py-20 relative bg-gradient-to-b from-black via-[#0a1122] to-black"
     >
-      {/* Enhanced background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>

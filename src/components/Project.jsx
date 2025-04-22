@@ -20,11 +20,11 @@ const Project = ({ title, description, link, githubLink, index, technologies = [
       
       {/* Optional project image */}
       {image && (
-        <div className="h-48 w-full overflow-hidden">
+        <div className="w-[100%] px-4 pt-4 overflow-hidden">
           <img 
             src={image} 
             alt={title} 
-            className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+            className="w-full h-full object-cover transform transition-transform duration-700"
           />
         </div>
       )}
