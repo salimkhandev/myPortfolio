@@ -18,7 +18,7 @@ const Projects = () => {
       link: "https://ghss-management.vercel.app",
       githubLink: "https://github.com/salimkhandev/GHSS-Management",
       technologies: ["React", "Node.js", "Material-UI", "Tailwind CSS"],
-      image: "../../public/techIcons/projectScreenshot/schoolmng.png"
+      image: "/techIcons/projectScreenshot/schoolmng.png"
     },
     {
       title: "Push Notifications",
@@ -26,7 +26,8 @@ const Projects = () => {
       link: "https://firebase-fcm2.vercel.app",
       githubLink: "https://github.com/salimkhandev/Firebase-FCM",
       technologies: ["Firebase", "FCM", "React"],
-      image: "../../public/techIcons/projectScreenshot/fcm.png"
+      image: "/techIcons/projectScreenshot/fcm.png"
+
     },
     {
       title: "offline attendance system (PWA)",
@@ -35,7 +36,7 @@ const Projects = () => {
 
       githubLink: "https://github.com/salimkhandev/pwa-master",
       technologies: ["React", "PWA", "push notification", "IndexedDB", "bgSync"],
-      image: "../../public/techIcons/projectScreenshot/fullPwa.png"
+      image: "/techIcons/projectScreenshot/fullPwa.png"
     },
     {
       title: "TaskTame",
@@ -44,7 +45,7 @@ const Projects = () => {
       githubLink: "https://github.com/salimkhandev/ReactToDo",
       technologies: ["React", "Tailwind CSS", "PWA", "localStorage"],
       // correct the path of the image
-      image: "../../public/techIcons/projectScreenshot/tasktame.png.png"
+      image: "/techIcons/projectScreenshot/tasktame.png.png"
 
 
     },
@@ -54,7 +55,7 @@ const Projects = () => {
       link: "https://siti-networks.vercel.app/",
       githubLink: "https://github.com/salimkhandev/SITI-Networks",
       technologies: ["HTML", "CSS", "Responsive Design"],
-      image: "../../public/techIcons/projectScreenshot/siti.png"
+      image: "/techIcons/projectScreenshot/siti.png"
     },
     {
       title: "SeatGeek",
@@ -62,7 +63,7 @@ const Projects = () => {
       link: "https://seatgreek.vercel.app",
       githubLink: "https://github.com/salimkhandev/seatgreek",
       technologies: ["Next.js"],
-      image: "../../public/techIcons/projectScreenshot/geek.png"
+      image: "/techIcons/projectScreenshot/geek.png"
     },
     {
       title: "Background Remover",
@@ -70,7 +71,7 @@ const Projects = () => {
       link: "https://backgroundremover-eta.vercel.app/",
       githubLink: "https://github.com/salimkhandev/BackgroundRemoverFrontend",
       technologies: ["React", "Image Processing", "API Integration"],
-      image: "../../public/techIcons/projectScreenshot/bgRemove.png"
+      image: "/techIcons/projectScreenshot/bgRemove.png"
     },
     
     {
@@ -87,7 +88,7 @@ const Projects = () => {
       link: "https://tic-tac-toe-game-tawny-five.vercel.app",
       githubLink: "https://github.com/salimkhandev/Tic-Tac-Toe-game",
       technologies: ["React", "Tailwind CSS", "Game Logic"],
-      image: "../../public/techIcons/projectScreenshot/tictactoe.png"
+      image: "/techIcons/projectScreenshot/tictactoe.png"
     }
   ];
 
