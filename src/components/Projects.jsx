@@ -80,7 +80,7 @@ const Projects = () => {
       link: "https://snake-game-pwa.vercel.app",
       githubLink: "https://github.com/salimkhandev/offline-snake-game",
       technologies: ["JavaScript", "PWA", "HTML5 Canvas"],
-      image: "../../public/techIcons/projectScreenshot/snake.png"
+      image: "/techIcons/projectScreenshot/snake.png"
     },
     {
       title: "Tic Tac Toe Game",
