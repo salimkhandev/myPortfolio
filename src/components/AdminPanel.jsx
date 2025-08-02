@@ -86,8 +86,33 @@ const AdminPanel = () => {
     return (
         <div className="min-h-screen p-10 text-white submitted-forms bg-gray-900">
            <div className='mb-10'>
-                {documents.length === 0 ? null: <Button variant="contained" className='float-right bg-red-700' style={{ backgroundColor: '#b91c1c', color: 'white', float: 'right' }} // Tailwind's bg-red-700 equivalent
- onClick={deleteAllDocuments}>Delete all recods</Button>}
+                {<div className="min-h-screen p-10 text-white submitted-forms bg-gray-900">
+   <div className="flex justify-between items-center mb-10">
+        <h1 className="text-3xl font-bold">Submitted Forms</h1>
+
+        <div className="space-x-4">
+            {documents.length > 0 && (
+                <Button
+                    variant="contained"
+                    className="bg-red-700 hover:bg-red-800"
+                    style={{ backgroundColor: '#b91c1c', color: 'white' }}
+                    onClick={deleteAllDocuments}
+                >
+                    Delete all records
+                </Button>
+            )}
+
+            <a
+                href="https://docs.google.com/document/d/115SA9LHSWySCV1MWH4seXDgSgaNbW4ri8cDE73Qwx-c/edit?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded transition duration-200"
+            >
+                View Resume
+            </a>
+        </div>
+    </div>
+}
             
             </div> 
 
@@ -98,7 +123,6 @@ const AdminPanel = () => {
                 
                {
  documents.length === 0 ? (<p>No documents found.</p>):
-               
                (documents.map((doc, index) => (
                     <li key={doc._id} className={`p-6 rounded-lg break-words shadow-md ${bgColors[index % bgColors.length]}`}>
                         <span className='text-gray-900 border-black border-2 rounded-full px-3 py-1'>{index + 1}</span>                        
@@ -107,12 +131,7 @@ const AdminPanel = () => {
                         <p className="text-lg "> <b>Message:</b> {doc.message}</p>
                        <button className='bg-red-900 hover:bg-red-500  text-white font-bold py-2 px-2 rounded' onClick={()=>{handleDelete(doc._id)}}>Delete</button>
                     </li>
-                )))
-                
-                
-                
-                
-                }
+                )))}
             </ul>}
 
             
